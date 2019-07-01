@@ -49,6 +49,7 @@ namespace BarcodePrinter
 
         public Image RenderImage()
         {
+            //codigo para leer
             BarcodeLib.Barcode b = new BarcodeLib.Barcode(Contents, BarcodeLib.TYPE.CODE128);
             b.ForeColor = System.Drawing.Color.Black;
             b.BackColor = System.Drawing.Color.White;
