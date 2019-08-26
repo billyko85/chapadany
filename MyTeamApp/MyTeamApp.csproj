@@ -70,10 +70,7 @@
       <HintPath>packages\System.Data.SQLite.Linq.1.0.111.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Compact.4.0.8854.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Compact.4.0.8854.1\lib\net40\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
@@ -94,6 +91,12 @@
     </Compile>
     <Compile Include="Castelar.Designer.cs">
       <DependentUpon>Castelar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dm AppWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dm AppWeb.Designer.cs">
+      <DependentUpon>Dm AppWeb.cs</DependentUpon>
     </Compile>
     <Compile Include="Lam_SQLSERVER.cs" />
     <Compile Include="Distrimar_SQLSERVER.cs" />
@@ -217,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CargasInicial.resx">
       <DependentUpon>CargasInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dm AppWeb.resx">
+      <DependentUpon>Dm AppWeb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DM.resx">
       <DependentUpon>DM.cs</DependentUpon>
@@ -600,6 +606,13 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.111.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.111.0\build\net40\System.Data.SQLite.Core.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -36,8 +36,6 @@
             this.insertarArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delVisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delVisoTransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equivalenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formularioEquivalenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DMToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oteroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +57,8 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.lAMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lamToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             // insertarArticulosToolStripMenuItem
             // 
             this.insertarArticulosToolStripMenuItem.Name = "insertarArticulosToolStripMenuItem";
-            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.insertarArticulosToolStripMenuItem.Text = "Insertar Articulos ";
             this.insertarArticulosToolStripMenuItem.Click += new System.EventHandler(this.insertarArticulosToolStripMenuItem_Click);
             // 
@@ -110,22 +110,6 @@
             this.delVisoTransToolStripMenuItem.Text = "DelViso Trans";
             this.delVisoTransToolStripMenuItem.Click += new System.EventHandler(this.delVisoTransToolStripMenuItem_Click);
             // 
-            // equivalenciasToolStripMenuItem
-            // 
-            this.equivalenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formularioEquivalenciasToolStripMenuItem});
-            this.equivalenciasToolStripMenuItem.Name = "equivalenciasToolStripMenuItem";
-            this.equivalenciasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.equivalenciasToolStripMenuItem.Text = "Equivalencias";
-            this.equivalenciasToolStripMenuItem.Click += new System.EventHandler(this.equivalenciasToolStripMenuItem_Click);
-            // 
-            // formularioEquivalenciasToolStripMenuItem
-            // 
-            this.formularioEquivalenciasToolStripMenuItem.Name = "formularioEquivalenciasToolStripMenuItem";
-            this.formularioEquivalenciasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.formularioEquivalenciasToolStripMenuItem.Text = "Formulario Equivalencias";
-            this.formularioEquivalenciasToolStripMenuItem.Click += new System.EventHandler(this.formularioEquivalenciasToolStripMenuItem_Click);
-            // 
             // DMToolStripMenu
             // 
             this.DMToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -137,7 +121,7 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaToolStripMenuItem.Text = "Lista";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
@@ -266,7 +250,6 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.delVisoToolStripMenuItem,
-            this.equivalenciasToolStripMenuItem,
             this.DMToolStripMenu,
             this.oteroToolStripMenuItem,
             this.cargaInicialToolStripMenuItem,
@@ -276,7 +259,8 @@
             this.cargarVentasToolStripMenuItem,
             this.castelarToolStripMenuItem,
             this.distrimarToolStripMenuItem,
-            this.lAMToolStripMenuItem});
+            this.lAMToolStripMenuItem,
+            this.toolStripMenuItem4});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(923, 24);
@@ -295,9 +279,24 @@
             // lamToolStripMenuItem1
             // 
             this.lamToolStripMenuItem1.Name = "lamToolStripMenuItem1";
-            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.lamToolStripMenuItem1.Text = "Lam";
             this.lamToolStripMenuItem1.Click += new System.EventHandler(this.lamToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5});
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(61, 20);
+            this.toolStripMenuItem4.Text = "Dm app";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "Dm Appweb";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // MdiFrmMenu
             // 
@@ -329,8 +328,6 @@
         private System.Windows.Forms.ToolStripMenuItem insertarArticulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem delVisoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem delVisoTransToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem equivalenciasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formularioEquivalenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DMToolStripMenu;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oteroToolStripMenuItem;
@@ -352,6 +349,8 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem lAMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lamToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
 

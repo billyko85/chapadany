@@ -18,6 +18,48 @@ namespace MyTeamApp
             "ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
+        public void InsertarEmpresaBulk(DataTable dataGrid, ProgressBar bar)
+        {
+
+            bar.Minimum = 0;
+            bar.Maximum = dataGrid.Rows.Count;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            SqlCommand command = new SqlCommand("truncate table Cromosol_Empresa", conn);
+            command.ExecuteNonQuery();
+
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
+            {
+                bulkCopy.DestinationTableName =
+                    "dbo.Cromosol_Empresa";
+
+                try
+                {
+                    // Write from the source to the destination.
+                    bulkCopy.WriteToServer(dataGrid);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            bar.Value = bar.Maximum;
+
+            conn.Close();
+
+        }
+
         public void InsertarEmpresa(DataTable dataGrid, ProgressBar bar)
         {
 
@@ -409,7 +451,7 @@ namespace MyTeamApp
             {
                 
                 bulkCopy.BatchSize = 100000; // How many Rows you want to insert at a time
-                bulkCopy.BulkCopyTimeout = 60;
+                bulkCopy.BulkCopyTimeout = 0;
 
                 bulkCopy.DestinationTableName =
                     "dbo.Cromosol_Articulo";

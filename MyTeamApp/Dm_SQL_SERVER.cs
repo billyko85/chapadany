@@ -205,7 +205,7 @@ namespace MyTeamApp
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
             {
                 bulkCopy.DestinationTableName =
-                    "dbo.Dm_productos";
+                    "dbo.DM_productos";
 
                 try
                 {
@@ -214,7 +214,7 @@ namespace MyTeamApp
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message, "Eror bulk DM productos");
                 }
             }
 

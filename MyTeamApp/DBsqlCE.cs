@@ -13,7 +13,7 @@ namespace MyTeamApp
     class DBsqlCE
     {
         private SqlCeConnection connection;
-        private string connectionString = "Data Source=C:\\Cromosol\\Neox SLA\\SLA.sdf; Password ='adminxx'";
+        private string connectionString = "Data Source=C:\\Cromosol\\Neox SLA\\sla.sdf; Password ='adminxx'";
         private const char Cromosol = '1';
         private const char BBA = '2';
         private bool openConnection = false;

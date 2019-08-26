@@ -23,5 +23,10 @@ namespace BarcodePrinter.Views
         {
             InitializeComponent();
         }
+
+        private void Print_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

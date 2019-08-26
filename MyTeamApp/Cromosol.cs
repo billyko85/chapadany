@@ -52,7 +52,8 @@ namespace MyTeamApp
 
             if (this.checkEmpresas.Checked) { 
                 datos = dbsqlCe.cargarDataTable(Empresa);
-                dbCromosol.InsertarEmpresa(datos, cromosolBar);
+                //dbCromosol.InsertarEmpresa(datos, cromosolBar);
+                dbCromosol.InsertarEmpresaBulk(datos, cromosolBar);
                 datos.Dispose();
             }
 

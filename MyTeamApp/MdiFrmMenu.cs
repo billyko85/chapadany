@@ -215,5 +215,13 @@ namespace MyTeamApp
             f.MdiParent = this;
             f.Show();
         }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            Form f = new Dm_AppWeb();
+            f.MdiParent = this;
+            f.Show();
+
+        }
     }
 }

@@ -67,7 +67,7 @@ namespace BarcodePrinter
         public void Print(string printer)
         {
             new ZebraPrinter(printer).Print(String.Format(this.Epl, Contents)); 
-        }
+        }   
     }
 
 

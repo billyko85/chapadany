@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace MyTeamApp
 {
@@ -89,13 +90,19 @@ namespace MyTeamApp
 
             if (OpenConnection("DB_PRODUCTOS.dm"))
             { 
-                SQLiteCommand ObjCommand = new SQLiteCommand(query, connection);
+                try
+                {
+                    SQLiteCommand ObjCommand = new SQLiteCommand(query, connection);
                 ObjCommand.CommandType = CommandType.Text;
                 SQLiteDataAdapter ObjDataAdapter = new SQLiteDataAdapter(ObjCommand);
                 DataSet dataSet = new DataSet();
                 ObjDataAdapter.Fill(dataSet, tabla);
                 grid = dataSet.Tables[tabla];
-                
+                }
+                catch (SqlException sqlexc)
+                {
+
+                }
             }
 
             CloseConnection();
