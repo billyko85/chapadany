@@ -41,14 +41,14 @@ namespace MyTeamApp
             ExcelDialog.Title = "Elegir archivo";
             if (ExcelDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MyExcelDistrimar.DB_PATH = ExcelDialog.FileName;
+                MyExcelDmApp.DB_PATH = ExcelDialog.FileName;
                 txtFileName.Text = ExcelDialog.FileName;
                 txtFileName.ReadOnly = true;
                 txtFileName.Click -= btnLoad_Click;
                 tabControl1.Selecting -= tabControl1_Selecting;
                 btnLoad.Enabled = false;
-                MyExcelDistrimar.InitializeExcel();
-                dataGridEmpList.DataSource = MyExcelDistrimar.ReadMyExcel();
+                MyExcelDmApp.InitializeExcel();
+                dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
             }
 
         }

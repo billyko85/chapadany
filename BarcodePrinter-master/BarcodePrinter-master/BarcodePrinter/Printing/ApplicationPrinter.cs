@@ -9,64 +9,64 @@ namespace BarcodePrinter.Printing
 {
     public class ApplicationPrinter
     {
-        ILog logger = LogManager.GetLog(typeof(ApplicationPrinter));
+            ILog logger = LogManager.GetLog(typeof(ApplicationPrinter));
 
-        public IList<string> InstalledPrinters
-        {
-            get
+            public IList<string> InstalledPrinters
             {
-                if (PrinterSettings.InstalledPrinters.Count == 0)
+                get
                 {
-                    logger.Info("InstalledPrinters list is empty. Trying via System.Management");
-
-                    var query = new ObjectQuery("SELECT * FROM Win32_Printer");
-                    var searcher = new ManagementObjectSearcher(query);
-
-                    List<string> result = new List<string>();
-                    foreach (ManagementObject mo in searcher.Get())
+                    if (PrinterSettings.InstalledPrinters.Count == 0)
                     {
-                        result.Add((string)mo["Name"]);
+                        logger.Info("InstalledPrinters list is empty. Trying via System.Management");
+
+                        var query = new ObjectQuery("SELECT * FROM Win32_Printer");
+                        var searcher = new ManagementObjectSearcher(query);
+
+                        List<string> result = new List<string>();
+                        foreach (ManagementObject mo in searcher.Get())
+                        {
+                            result.Add((string)mo["Name"]);
+                        }
+
+                        result.Sort(StringComparer.Ordinal);
+
+                        return result;
+
                     }
 
-                    result.Sort(StringComparer.Ordinal);
 
-                    return result;
-
+                    return ToSortedStringArray(PrinterSettings.InstalledPrinters);
                 }
-
-
-                return ToSortedStringArray(PrinterSettings.InstalledPrinters);
             }
-        }
 
-        public IList<string> InstalledZebraPrinters
-        {
-            get
+            public IList<string> InstalledZebraPrinters
             {
-                return InstalledPrinters.Where(IsZebraPrinter).ToList();
+                get
+                {
+                    return InstalledPrinters.Where(IsZebraPrinter).ToList();
+                }
             }
-        }
 
-        public string DefaultZebraPrinter
-        {
-            get { return InstalledZebraPrinters.FirstOrDefault(); }
-        }
-
-        private static bool IsZebraPrinter(string printer)
-        {
-            return !string.IsNullOrEmpty(printer)
-                   && (printer.ToUpper().Contains("ZEBRA") || printer.ToUpper().Contains("ZDESIGNER"));
-        }
-
-        private IList<string> ToSortedStringArray(PrinterSettings.StringCollection printers)
-        {
-            List<string> stringList = new List<string>();
-            foreach (string printer in printers)
+            public string DefaultZebraPrinter
             {
-                stringList.Add(printer);
+                get { return InstalledZebraPrinters.FirstOrDefault(); }
             }
-            stringList.Sort(StringComparer.Ordinal);
-            return stringList;
-        }
+
+            private static bool IsZebraPrinter(string printer)
+            {
+                return !string.IsNullOrEmpty(printer)
+                       && (printer.ToUpper().Contains("ZEBRA") || printer.ToUpper().Contains("ZDESIGNER"));
+            }
+
+            private IList<string> ToSortedStringArray(PrinterSettings.StringCollection printers)
+            {
+                List<string> stringList = new List<string>();
+                foreach (string printer in printers)
+                {
+                    stringList.Add(printer);
+                }
+                stringList.Sort(StringComparer.Ordinal);
+                return stringList;
+            }
     }
 }

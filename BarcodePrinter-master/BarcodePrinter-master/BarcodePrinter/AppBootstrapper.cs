@@ -86,7 +86,7 @@ namespace BarcodePrinter
                     dynamic o = JToken.ReadFrom(new JsonTextReader(reader))[0];
 
                     //ShowPrintLabel((string)o.label, (string)o.epl);
-                    ShowPrintLabel("Chapa1", (string)o.epl);
+                        ShowPrintLabel("Chapa1", (string)o.epl);
                 }
             }
             catch (FileNotFoundException ex)

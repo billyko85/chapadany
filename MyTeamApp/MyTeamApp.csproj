@@ -183,6 +183,7 @@
     <Compile Include="Lam.Designer.cs">
       <DependentUpon>Lam.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyExcelDmApp.cs" />
     <Compile Include="MyExcelDistrimar.cs" />
     <Compile Include="ReadDbf.cs" />
     <Compile Include="SanFernet.cs">
