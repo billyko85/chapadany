@@ -48,7 +48,9 @@ namespace MyTeamApp
                 tabControl1.Selecting -= tabControl1_Selecting;
                 btnLoad.Enabled = false;
                 MyExcelDmApp.InitializeExcel();
-                dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
+                //dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
+
+                dbConnect.InsertarDmArticulosAppBulk(MyExcelDmApp.ReadMyExcel_DataTable(), Bar);
             }
 
         }

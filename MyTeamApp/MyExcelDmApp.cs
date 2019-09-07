@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using Excel=Microsoft.Office.Interop.Excel;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.Data;
 
 namespace MyTeamApp
 {
@@ -60,12 +61,70 @@ namespace MyTeamApp
 
         public static void InitializeExcel()
         {
-            MyApp = new Excel.Application();
-            MyApp.Visible = false;
-            MyBook = MyApp.Workbooks.Open(DB_PATH);
-            MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explict cast is not required here
-            lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            try
+            { 
+                MyApp = new Excel.Application();
+                MyApp.Visible = false;
+                MyBook = MyApp.Workbooks.Open(DB_PATH);
+                MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explict cast is not required here
+                lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message);  }
+}
+
+
+        public static DataTable ReadMyExcel_DataTable()
+        {
+            string colum1, colum2;
+
+            DataTable registros = new DataTable("childTable");
+            DataColumn column;
+            DataRow row;
+
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Codigo";
+            registros.Columns.Add(column);
+
+            // Create first column and add to the DataTable.
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Origen";
+            registros.Columns.Add(column);
+                 
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Descripcion";
+            registros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Precio";
+            registros.Columns.Add(column);
+
+            //EmpList.Clear();
+
+            colum1 = "A"; colum2 = "D";
+
+            for (int index = 4; index <= lastRow; index++)
+            {
+                System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
+
+                row = registros.NewRow();
+                row[0] = MyValues.GetValue(1, 1);
+                row[1] = MyValues.GetValue(1, 2);
+                row[2] = MyValues.GetValue(1, 3);
+                row[3] = MyValues.GetValue(1, 4);
+      
+                registros.Rows.Add(row);
+            }
+            return registros;
+
         }
+
 
 
         public static BindingList<ListaDmApp> ReadMyExcel()

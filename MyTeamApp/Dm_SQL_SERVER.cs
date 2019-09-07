@@ -182,6 +182,49 @@ namespace MyTeamApp
         }
 
 
+
+        public void InsertarDmArticulosAppBulk(DataTable datatable, ProgressBar bar)
+        {
+
+            bar.Minimum = 0;
+            bar.Maximum = datatable.Rows.Count;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            SqlCommand command = new SqlCommand("truncate table DM_productos_webApp", conn);
+            command.ExecuteNonQuery();
+
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
+            {
+                bulkCopy.DestinationTableName =
+                    "dbo.DM_productos_webApp";
+
+                try
+                {
+                    // Write from the source to the destination.
+                    bulkCopy.WriteToServer(datatable);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eror bulk DM productos");
+                }
+            }
+
+            bar.Value = bar.Maximum;
+
+            conn.Close();
+
+        }
+
         public void InsertarDmArticulosBulk(DataTable datatable, ProgressBar bar)
         {
 
