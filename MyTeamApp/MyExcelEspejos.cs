@@ -10,14 +10,17 @@ using System.Data;
 
 namespace MyTeamApp
 {
-    public class ListaDmApp
+    public class ListaEspejos
     {
-        public string Origen { get; set; }
         public string Codigo { get; set; }
+        public string Marca { get; set; }
         public string Descripcion { get; set; }
-        public string Precio { get; set; }
+        public string planoizq { get; set; }
+        public string curvoizq { get; set; }
+        public string planoder { get; set; }
+        public string curvoder { get; set; }
 
-        public ListaDmApp(object _Codigo, object _Descripcion, object _Origen,   object _Precio)
+        public ListaEspejos(object _Codigo, object _Marca, object _Descripcion, object _planoizq,   object _curvoizq, object _planoder, object _curvoder)
         {
 
             if (_Codigo != null)
@@ -29,26 +32,64 @@ namespace MyTeamApp
                 Codigo = string.Empty;
             }
 
+            if (_Marca != null)
+            {
+                Marca = _Marca.ToString();
+            }
+            else
+            {
+                Marca = string.Empty;
+            }
+
             if (_Descripcion != null){
                 Descripcion = _Descripcion.ToString();
-          }
+            }
             else
             {
                 Descripcion = string.Empty;
             }
 
-            if(_Precio != null){
-                Precio = _Precio.ToString();
-          }
+            if (_planoizq != null)
+            {
+                planoizq = _planoizq.ToString();
+            }
             else
             {
-                Precio = string.Empty;
+                planoizq = string.Empty;
             }
+
+            if (_curvoizq != null)
+            {
+                curvoizq = _curvoizq.ToString();
+            }
+            else
+            {
+                curvoizq = string.Empty;
+            }
+
+            if (_planoder != null)
+            {
+                planoder = _planoder.ToString();
+            }
+            else
+            {
+                planoder = string.Empty;
+            }
+
+            if (_curvoder != null)
+            {
+                curvoder = _curvoder.ToString();
+            }
+            else
+            {
+                curvoder = string.Empty;
+            }
+
 
         }
     }
 
-    class MyExcelDmApp
+    class MyExcelEspejos
     {
         public static string DB_PATH = @"";
         public static BindingList<ListaDmApp> EmpList = new BindingList<ListaDmApp>();
@@ -83,8 +124,7 @@ namespace MyTeamApp
             DataColumn column;
             DataRow row;
 
-
-            column = new DataColumn();
+        column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
             column.ColumnName = "Codigo";
             registros.Columns.Add(column);
@@ -92,7 +132,7 @@ namespace MyTeamApp
             // Create first column and add to the DataTable.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Origen";
+            column.ColumnName = "Marca";
             registros.Columns.Add(column);
                  
             column = new DataColumn();
@@ -101,24 +141,51 @@ namespace MyTeamApp
             registros.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Double");
-            column.ColumnName = "Precio";
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "planoizq";
+            registros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "curvoizq";
+            registros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "planoder";
+            registros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "curvoder";
             registros.Columns.Add(column);
 
             //EmpList.Clear();
 
-            colum1 = "A"; colum2 = "D";
+            //            public string Codigo { get; set; }
+            //public string Marca { get; set; }
+            //public string Descripcion { get; set; }
+            //public string planoizq { get; set; }
+            //public string c { get; set; }
+            //public string planoder { get; set; }
+            //public string curvoder { get; set; }
 
-            for (int index = 4; index <= lastRow; index++)
+            colum1 = "A"; colum2 = "G";
+
+            for (int index = 8; index <= lastRow; index++)
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
                 row = registros.NewRow();
-                row[0] = MyValues.GetValue(1, 1);
-                row[1] = MyValues.GetValue(1, 2);
-                row[2] = MyValues.GetValue(1, 3);
-                row[3] = MyValues.GetValue(1, 4).ToString().Trim().Replace('.',',');
-      
+                row[0] = MyValues.GetValue(1, 1);//Precio
+                row[1] = MyValues.GetValue(1, 3);//Descrip
+                row[2] = MyValues.GetValue(1, 4);//planoizq
+                row[3] = MyValues.GetValue(1, 5);//planoizq
+                row[4] = MyValues.GetValue(1, 6);//planoder
+                row[5] = MyValues.GetValue(1, 7);//curvoder
+
+                //row[3] = MyValues.GetValue(1, 5).ToString().Trim().Replace('.',',');
+
                 registros.Rows.Add(row);
             }
             return registros;

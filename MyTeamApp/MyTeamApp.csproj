@@ -98,6 +98,13 @@
     <Compile Include="Dm AppWeb.Designer.cs">
       <DependentUpon>Dm AppWeb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Espejos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Espejos.Designer.cs">
+      <DependentUpon>Espejos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="espejosSqlServer.cs" />
     <Compile Include="Lam_SQLSERVER.cs" />
     <Compile Include="Distrimar_SQLSERVER.cs" />
     <Compile Include="Cromosol_DB.cs" />
@@ -183,6 +190,7 @@
     <Compile Include="Lam.Designer.cs">
       <DependentUpon>Lam.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyExcelEspejos.cs" />
     <Compile Include="MyExcelDmApp.cs" />
     <Compile Include="MyExcelDistrimar.cs" />
     <Compile Include="ReadDbf.cs" />
@@ -234,6 +242,9 @@
     <EmbeddedResource Include="Chapadany.resx">
       <DependentUpon>Chapadany.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Espejos.resx">
+      <DependentUpon>Espejos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="farosDam.resx">
       <DependentUpon>farosDam.cs</DependentUpon>
