@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridEmpList = new System.Windows.Forms.DataGridView();
+            this.dgEspejos = new System.Windows.Forms.DataGridView();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEspejos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridEmpList
+            // dgEspejos
             // 
-            this.dataGridEmpList.AllowUserToOrderColumns = true;
-            this.dataGridEmpList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridEmpList.Location = new System.Drawing.Point(12, 98);
-            this.dataGridEmpList.Name = "dataGridEmpList";
-            this.dataGridEmpList.RowHeadersWidth = 50;
-            this.dataGridEmpList.Size = new System.Drawing.Size(776, 319);
-            this.dataGridEmpList.TabIndex = 19;
+            this.dgEspejos.AllowUserToOrderColumns = true;
+            this.dgEspejos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgEspejos.Location = new System.Drawing.Point(12, 98);
+            this.dgEspejos.Name = "dgEspejos";
+            this.dgEspejos.RowHeadersWidth = 50;
+            this.dgEspejos.Size = new System.Drawing.Size(776, 319);
+            this.dgEspejos.TabIndex = 19;
             // 
             // txtFileName
             // 
@@ -66,12 +66,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridEmpList);
+            this.Controls.Add(this.dgEspejos);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.btnLoad);
             this.Name = "Espejos";
             this.Text = "Espejos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEspejos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridEmpList;
+        private System.Windows.Forms.DataGridView dgEspejos;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Button btnLoad;
     }
