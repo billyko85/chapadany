@@ -100,7 +100,8 @@ namespace MyTeamApp
                         row.Codigo = MyValues.GetValue(1, 1).ToString();
 
                     row.tipo = MyValues.GetValue(1, 2).ToString();
-                    row.Descripcion = MyValues.GetValue(1, 3).ToString();//Descrip
+                    row.Descripcion = "Vidrios de espejo con Base";
+                    row.auto = MyValues.GetValue(1, 3).ToString();//Descrip
 
                     row.precio = Convert.ToDouble(MyValues.GetValue(1, 4));//planoizq
                     row.lado = "IZQUIERDO";
@@ -119,16 +120,39 @@ namespace MyTeamApp
                     row.curvatura = "CURVO";
                     dataTable.Rows.Add(row);
 
+                    values = dataTable.NewRow();
+                    for (int i = 0; i < properties.Length; i++)
+                    {
+                        values[i] = properties[i].GetValue(row);
+                    }
+
+                    dataTable.Rows.Add(values);
+
                     row.precio = Convert.ToDouble(MyValues.GetValue(1, 6));//planoDER
                     row.lado = "DERECHO";
                     row.curvatura = "PLANO";
                     dataTable.Rows.Add(row);
 
+                    values = dataTable.NewRow();
+                    for (int i = 0; i < properties.Length; i++)
+                    {
+                        values[i] = properties[i].GetValue(row);
+                    }
+
+                    dataTable.Rows.Add(values);
+
                     row.precio = Convert.ToDouble(MyValues.GetValue(1, 7));//planoDER
                     row.lado = "DERECHO";
                     row.curvatura = "CURVO";
 
-                    dataTable.Rows.Add(mapearCampos(row,  properties));
+                    values = dataTable.NewRow();
+                    for (int i = 0; i < properties.Length; i++)
+                    {
+                        values[i] = properties[i].GetValue(row);
+                    }
+
+                    dataTable.Rows.Add(values);
+
                 }
                     
 
