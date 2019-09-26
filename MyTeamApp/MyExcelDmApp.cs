@@ -69,6 +69,7 @@ namespace MyTeamApp
                 MyBook = MyApp.Workbooks.Open(DB_PATH);
                 MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explict cast is not required here
                 lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message);  }
@@ -82,8 +83,7 @@ namespace MyTeamApp
             DataTable registros = new DataTable("childTable");
             DataColumn column;
             DataRow row;
-
-
+  
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
             column.ColumnName = "Codigo";

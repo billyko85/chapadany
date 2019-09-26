@@ -30,15 +30,17 @@ namespace MyTeamApp
             ExcelDialog.Title = "Elegir archivo";
             if (ExcelDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MyExcelDmApp.DB_PATH = ExcelDialog.FileName;
+                MyExcelEspejos.DB_PATH = ExcelDialog.FileName;
                 txtFileName.Text = ExcelDialog.FileName;
                 txtFileName.ReadOnly = true;
                 txtFileName.Click -= btnLoad_Click;
                 btnLoad.Enabled = false;
-                MyExcelDmApp.InitializeExcel();
+                MyExcelEspejos.InitializeExcel();
                 //dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
                 dgEspejos.DataSource = MyExcelEspejos.ReadMyExcel_DataTable();
                 //dbConnect.InsertarEspejosBulk(MyExcelEspejos.ReadMyExcel_DataTable());
             }
+        }
     }
 }
+    

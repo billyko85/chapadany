@@ -7,84 +7,34 @@ using Excel=Microsoft.Office.Interop.Excel;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
+using System.Reflection;
 
 namespace MyTeamApp
 {
     public class ListaEspejos
     {
+
+//        codigo nvarchar(50)    Checked
+//decripcion  nvarchar(50)    Checked
+//marca   nvarchar(50)    Checked
+//auto    nvarchar(50)    Checked
+//tipo    nchar(10)   Checked
+//lado    nchar(10)   Checked
+//curvatura   nchar(10)   Checked
+//precio  decimal (18, 2)	Checked
+
+
         public string Codigo { get; set; }
         public string Marca { get; set; }
         public string Descripcion { get; set; }
-        public string planoizq { get; set; }
-        public string curvoizq { get; set; }
-        public string planoder { get; set; }
-        public string curvoder { get; set; }
+        public string auto { get; set; }
+        public string tipo { get; set; }
+        public string lado { get; set; }
+        public string curvatura { get; set; }
+        public double precio { get; set; }
 
-        public ListaEspejos(object _Codigo, object _Marca, object _Descripcion, object _planoizq,   object _curvoizq, object _planoder, object _curvoder)
+        public ListaEspejos()
         {
-
-            if (_Codigo != null)
-            { 
-                Codigo = _Codigo.ToString();
-            }
-            else
-            {
-                Codigo = string.Empty;
-            }
-
-            if (_Marca != null)
-            {
-                Marca = _Marca.ToString();
-            }
-            else
-            {
-                Marca = string.Empty;
-            }
-
-            if (_Descripcion != null){
-                Descripcion = _Descripcion.ToString();
-            }
-            else
-            {
-                Descripcion = string.Empty;
-            }
-
-            if (_planoizq != null)
-            {
-                planoizq = _planoizq.ToString();
-            }
-            else
-            {
-                planoizq = string.Empty;
-            }
-
-            if (_curvoizq != null)
-            {
-                curvoizq = _curvoizq.ToString();
-            }
-            else
-            {
-                curvoizq = string.Empty;
-            }
-
-            if (_planoder != null)
-            {
-                planoder = _planoder.ToString();
-            }
-            else
-            {
-                planoder = string.Empty;
-            }
-
-            if (_curvoder != null)
-            {
-                curvoder = _curvoder.ToString();
-            }
-            else
-            {
-                curvoder = string.Empty;
-            }
-
 
         }
     }
@@ -113,86 +63,99 @@ namespace MyTeamApp
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message);  }
-}
+
+        }
 
 
         public static DataTable ReadMyExcel_DataTable()
         {
             string colum1, colum2;
 
-            DataTable registros = new DataTable("childTable");
-            DataColumn column;
-            DataRow row;
+            Type type = typeof(ListaEspejos);
+            var properties = type.GetProperties();
 
-        column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Codigo";
-            registros.Columns.Add(column);
+            DataTable dataTable = new DataTable();
+            foreach (PropertyInfo info in properties)
+            {
+                dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
+            }
 
-            // Create first column and add to the DataTable.
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Marca";
-            registros.Columns.Add(column);
-                 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Descripcion";
-            registros.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "planoizq";
-            registros.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "curvoizq";
-            registros.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "planoder";
-            registros.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "curvoder";
-            registros.Columns.Add(column);
-
-            //EmpList.Clear();
-
-            //            public string Codigo { get; set; }
-            //public string Marca { get; set; }
-            //public string Descripcion { get; set; }
-            //public string planoizq { get; set; }
-            //public string c { get; set; }
-            //public string planoder { get; set; }
-            //public string curvoder { get; set; }
-
+         
+           
             colum1 = "A"; colum2 = "G";
+            ListaEspejos row = new ListaEspejos();
+            DataRow values = dataTable.NewRow();
+
 
             for (int index = 8; index <= lastRow; index++)
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
-                row = registros.NewRow();
-                row[0] = MyValues.GetValue(1, 1);//Precio
-                row[1] = MyValues.GetValue(1, 3);//Descrip
-                row[2] = MyValues.GetValue(1, 4);//planoizq
-                row[3] = MyValues.GetValue(1, 5);//planoizq
-                row[4] = MyValues.GetValue(1, 6);//planoder
-                row[5] = MyValues.GetValue(1, 7);//curvoder
+                if (MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) != null)
+                    { row.Marca = MyValues.GetValue(1, 3).ToString().Trim(); }
+                else if (MyValues.GetValue(1, 2) != null)
+                {
+                    if (MyValues.GetValue(1, 1) != null)
+                        row.Codigo = MyValues.GetValue(1, 1).ToString();
 
-                //row[3] = MyValues.GetValue(1, 5).ToString().Trim().Replace('.',',');
+                    row.tipo = MyValues.GetValue(1, 2).ToString();
+                    row.Descripcion = MyValues.GetValue(1, 3).ToString();//Descrip
 
-                registros.Rows.Add(row);
+                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 4));//planoizq
+                    row.lado = "IZQUIERDO";
+                    row.curvatura = "PLANO";
+
+                    //object[] values = new object[properties.Length];
+                    for (int i = 0; i < properties.Length; i++)
+                    {
+                        values[i] = properties[i].GetValue(row);
+                    }
+
+                    dataTable.Rows.Add(values);
+
+                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 5));//curvoizq
+                    row.lado = "IZQUIERDO";
+                    row.curvatura = "CURVO";
+                    dataTable.Rows.Add(row);
+
+                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 6));//planoDER
+                    row.lado = "DERECHO";
+                    row.curvatura = "PLANO";
+                    dataTable.Rows.Add(row);
+
+                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 7));//planoDER
+                    row.lado = "DERECHO";
+                    row.curvatura = "CURVO";
+
+                    dataTable.Rows.Add(mapearCampos(row,  properties));
+                }
+                    
+
             }
-            return registros;
-
+            return dataTable;
         }
 
+        private static DataRow mapearCampos(ListaEspejos row, PropertyInfo[] properties)
+        {
+            Type type = typeof(ListaEspejos);
 
+            DataTable dataTable = new DataTable();
+            foreach (PropertyInfo info in properties)
+            {
+                dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
+            }
+
+            DataRow values = dataTable.NewRow(); 
+            
+            //object[] values = new object[properties.Length];
+            for (int i = 0; i < properties.Length; i++)
+            {
+                values[i] = properties[i].GetValue(row);
+            }
+
+            return values;
+        }
 
         public static BindingList<ListaDmApp> ReadMyExcel()
         {
