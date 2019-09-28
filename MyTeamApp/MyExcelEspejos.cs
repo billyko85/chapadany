@@ -25,8 +25,8 @@ namespace MyTeamApp
 
 
         public string Codigo { get; set; }
-        public string Marca { get; set; }
         public string Descripcion { get; set; }
+        public string Marca { get; set; }
         public string auto { get; set; }
         public string tipo { get; set; }
         public string lado { get; set; }
@@ -92,25 +92,26 @@ namespace MyTeamApp
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
-                if (MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) != null)
-                    { row.Marca = MyValues.GetValue(1, 3).ToString().Trim(); }
+                if ( (MyValues.GetValue(1, 1) == null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) != null) ||
+                    (MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) == null))
+                { row.Marca = MyValues.GetValue(1, 3).ToString().Trim(); }
                 else if (MyValues.GetValue(1, 2) != null)
                 {
                     if (MyValues.GetValue(1, 1) != null)
-                        row.Codigo = MyValues.GetValue(1, 1).ToString();
+                        row.Codigo = MyValues.GetValue(1, 1).ToString().Trim();
 
-                    row.tipo = MyValues.GetValue(1, 2).ToString();
+                    row.tipo = MyValues.GetValue(1, 2).ToString().Trim();
                     row.Descripcion = "Vidrios de espejo con Base";
-                    row.auto = MyValues.GetValue(1, 3).ToString();//Descrip
+                    row.auto = MyValues.GetValue(1, 3).ToString().Trim();//Descrip
 
                     row.precio = Convert.ToDouble(MyValues.GetValue(1, 4));//planoizq
                     row.lado = "IZQUIERDO";
                     row.curvatura = "PLANO";
 
-                    //object[] values = new object[properties.Length];
+                    values = dataTable.NewRow();
                     for (int i = 0; i < properties.Length; i++)
                     {
-                        values[i] = properties[i].GetValue(row);
+                         values[i] = properties[i].GetValue(row);
                     }
 
                     dataTable.Rows.Add(values);
@@ -118,8 +119,7 @@ namespace MyTeamApp
                     row.precio = Convert.ToDouble(MyValues.GetValue(1, 5));//curvoizq
                     row.lado = "IZQUIERDO";
                     row.curvatura = "CURVO";
-                    dataTable.Rows.Add(row);
-
+            
                     values = dataTable.NewRow();
                     for (int i = 0; i < properties.Length; i++)
                     {
@@ -131,8 +131,7 @@ namespace MyTeamApp
                     row.precio = Convert.ToDouble(MyValues.GetValue(1, 6));//planoDER
                     row.lado = "DERECHO";
                     row.curvatura = "PLANO";
-                    dataTable.Rows.Add(row);
-
+                   
                     values = dataTable.NewRow();
                     for (int i = 0; i < properties.Length; i++)
                     {

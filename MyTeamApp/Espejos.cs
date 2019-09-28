@@ -24,6 +24,7 @@ namespace MyTeamApp
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            DataTable dt;
             OpenFileDialog ExcelDialog = new OpenFileDialog();
             //            ExcelDialog.Filter = "Excel Files (*.xlsx) | *.xlsx";
             ExcelDialog.InitialDirectory = @"C:\Users\billyko\Downloads";
@@ -37,8 +38,9 @@ namespace MyTeamApp
                 btnLoad.Enabled = false;
                 MyExcelEspejos.InitializeExcel();
                 //dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
-                dgEspejos.DataSource = MyExcelEspejos.ReadMyExcel_DataTable();
-                //dbConnect.InsertarEspejosBulk(MyExcelEspejos.ReadMyExcel_DataTable());
+                dt = MyExcelEspejos.ReadMyExcel_DataTable();
+                dgEspejos.DataSource = dt;
+                dbConnect.InsertarEspejosBulk(dt);
             }
         }
     }

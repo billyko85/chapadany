@@ -34,7 +34,7 @@ namespace MyTeamApp
                 MessageBox.Show(ex.Message);
             }
 
-            SqlCommand command = new SqlCommand("truncate table ProveedoresLmEspejosArticulos", conn);
+            SqlCommand command = new SqlCommand("delete from ProveedoresLmEspejosArticulos where tipo = 'C/B'", conn);
             command.ExecuteNonQuery();
 
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
