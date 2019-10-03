@@ -92,19 +92,34 @@ namespace MyTeamApp
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
-                if ( (MyValues.GetValue(1, 1) == null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) != null) ||
-                    (MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) == null))
-                { row.Marca = MyValues.GetValue(1, 3).ToString().Trim(); }
+                if  (MyValues.GetValue(1, 1) == null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) != null)
+                    row.Marca = MyValues.GetValue(1, 3).ToString().Trim();
+                else if (MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) == null)
+                 row.Marca = MyValues.GetValue(1, 1).ToString().Trim(); 
                 else if (MyValues.GetValue(1, 2) != null)
                 {
                     if (MyValues.GetValue(1, 1) != null)
                         row.Codigo = MyValues.GetValue(1, 1).ToString().Trim();
 
                     row.tipo = MyValues.GetValue(1, 2).ToString().Trim();
-                    row.Descripcion = "Vidrios de espejo con Base";
+                    
+                    if (row.tipo == "C/B")
+                        row.Descripcion = "VIDRIOS ESPEJOS CON BASE";
+
+                    if (row.tipo == "LU")
+                        row.Descripcion = "VIDRIOS ESPEJOS SIN BASE";
+
                     row.auto = MyValues.GetValue(1, 3).ToString().Trim();//Descrip
 
-                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 4));//planoizq
+                    try { 
+                    if (MyValues.GetValue(1, 4) != null)
+                        row.precio = Convert.ToDouble(MyValues.GetValue(1, 4));//planoizq
+                    }
+                    catch(Exception ms)
+                    {
+                        row.precio = 0;
+                    }
+
                     row.lado = "IZQUIERDO";
                     row.curvatura = "PLANO";
 
@@ -115,9 +130,16 @@ namespace MyTeamApp
                     }
 
                     dataTable.Rows.Add(values);
+                    try { 
+                        if (MyValues.GetValue(1, 5) != null)
+                        row.precio = Convert.ToDouble(MyValues.GetValue(1, 5));//curvoizq
+                    }
+                        catch (Exception ms)
+                    {
+                        row.precio = 0;
+                    }
 
-                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 5));//curvoizq
-                    row.lado = "IZQUIERDO";
+                row.lado = "IZQUIERDO";
                     row.curvatura = "CURVO";
             
                     values = dataTable.NewRow();
@@ -128,8 +150,17 @@ namespace MyTeamApp
 
                     dataTable.Rows.Add(values);
 
-                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 6));//planoDER
-                    row.lado = "DERECHO";
+                    try
+                    {
+                     if (MyValues.GetValue(1, 6) != null)
+                        row.precio = Convert.ToDouble(MyValues.GetValue(1, 6));//planoDER
+                    }
+                    catch (Exception ms)
+                    {
+                        row.precio = 0;
+                    }
+
+                row.lado = "DERECHO";
                     row.curvatura = "PLANO";
                    
                     values = dataTable.NewRow();
@@ -140,8 +171,17 @@ namespace MyTeamApp
 
                     dataTable.Rows.Add(values);
 
-                    row.precio = Convert.ToDouble(MyValues.GetValue(1, 7));//planoDER
-                    row.lado = "DERECHO";
+                    try
+                    {
+                        if (MyValues.GetValue(1, 7) != null)
+                        row.precio = Convert.ToDouble(MyValues.GetValue(1, 7));//planoDER
+                    }
+                    catch (Exception ms)
+                    {
+                       row.precio = 0;
+                    }
+
+                   row.lado = "DERECHO";
                     row.curvatura = "CURVO";
 
                     values = dataTable.NewRow();

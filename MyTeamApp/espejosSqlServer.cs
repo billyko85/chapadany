@@ -19,7 +19,7 @@ namespace MyTeamApp
        "Connect Timeout = 60; Encrypt=False;TrustServerCertificate=False;" +
        "ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-        public void InsertarEspejosBulk(DataTable datatable)
+        public void InsertarEspejosBulk(DataTable datatable, string tipo)
         {
 
   
@@ -34,7 +34,7 @@ namespace MyTeamApp
                 MessageBox.Show(ex.Message);
             }
 
-            SqlCommand command = new SqlCommand("delete from ProveedoresLmEspejosArticulos where tipo = 'C/B'", conn);
+            SqlCommand command = new SqlCommand("delete from ProveedoresLmEspejosArticulos where tipo = '"+ tipo + "'" , conn);
             command.ExecuteNonQuery();
 
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))

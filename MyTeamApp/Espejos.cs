@@ -15,6 +15,7 @@ namespace MyTeamApp
 
         private espejosSqlServer dbConnect;
 
+        DataTable dt;
 
         public Espejos()
         {
@@ -24,7 +25,6 @@ namespace MyTeamApp
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            DataTable dt;
             OpenFileDialog ExcelDialog = new OpenFileDialog();
             //            ExcelDialog.Filter = "Excel Files (*.xlsx) | *.xlsx";
             ExcelDialog.InitialDirectory = @"C:\Users\billyko\Downloads";
@@ -40,8 +40,19 @@ namespace MyTeamApp
                 //dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
                 dt = MyExcelEspejos.ReadMyExcel_DataTable();
                 dgEspejos.DataSource = dt;
-                dbConnect.InsertarEspejosBulk(dt);
             }
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            DataRow row = dt.Rows[0];
+
+            if (row.ItemArray[4].ToString() == "C/B")
+                dbConnect.InsertarEspejosBulk(dt, "C/B");
+
+            if (row.ItemArray[4].ToString() == "LU")
+                dbConnect.InsertarEspejosBulk(dt, "LU");
+
         }
     }
 }
