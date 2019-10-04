@@ -134,7 +134,7 @@ namespace MyTeamApp
 
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new DM();
+            Form f = new Espejos();
             f.MdiParent = this;
             f.Show();
         }

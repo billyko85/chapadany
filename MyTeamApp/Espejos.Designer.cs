@@ -31,6 +31,7 @@
             this.dgEspejos = new System.Windows.Forms.DataGridView();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgEspejos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             this.dgEspejos.Location = new System.Drawing.Point(12, 98);
             this.dgEspejos.Name = "dgEspejos";
             this.dgEspejos.RowHeadersWidth = 50;
-            this.dgEspejos.Size = new System.Drawing.Size(776, 319);
+            this.dgEspejos.Size = new System.Drawing.Size(1056, 379);
             this.dgEspejos.TabIndex = 19;
             // 
             // txtFileName
@@ -61,11 +62,22 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(757, 29);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(172, 44);
+            this.btnCargar.TabIndex = 20;
+            this.btnCargar.Text = "CARGAR DATOS";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
             // Espejos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1080, 516);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgEspejos);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.btnLoad);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.DataGridView dgEspejos;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnCargar;
     }
 }

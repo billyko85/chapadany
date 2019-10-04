@@ -90,7 +90,7 @@
             // insertarArticulosToolStripMenuItem
             // 
             this.insertarArticulosToolStripMenuItem.Name = "insertarArticulosToolStripMenuItem";
-            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.insertarArticulosToolStripMenuItem.Text = "Insertar Articulos ";
             this.insertarArticulosToolStripMenuItem.Click += new System.EventHandler(this.insertarArticulosToolStripMenuItem_Click);
             // 
@@ -115,8 +115,8 @@
             this.DMToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaToolStripMenuItem});
             this.DMToolStripMenu.Name = "DMToolStripMenu";
-            this.DMToolStripMenu.Size = new System.Drawing.Size(38, 20);
-            this.DMToolStripMenu.Text = "DM";
+            this.DMToolStripMenu.Size = new System.Drawing.Size(75, 20);
+            this.DMToolStripMenu.Text = "EspejosLM";
             // 
             // listaToolStripMenuItem
             // 
@@ -279,7 +279,7 @@
             // lamToolStripMenuItem1
             // 
             this.lamToolStripMenuItem1.Name = "lamToolStripMenuItem1";
-            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
             this.lamToolStripMenuItem1.Text = "Lam";
             this.lamToolStripMenuItem1.Click += new System.EventHandler(this.lamToolStripMenuItem1_Click);
             // 
@@ -294,7 +294,7 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(140, 22);
             this.toolStripMenuItem5.Text = "Dm Appweb";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
