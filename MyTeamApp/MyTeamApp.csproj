@@ -92,6 +92,13 @@
     <Compile Include="Castelar.Designer.cs">
       <DependentUpon>Castelar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dam_SQLSERVER.cs" />
+    <Compile Include="Dam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dam.Designer.cs">
+      <DependentUpon>Dam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dm AppWeb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,12 +179,6 @@
     <Compile Include="Chriva.Designer.cs">
       <DependentUpon>Chriva.cs</DependentUpon>
     </Compile>
-    <Compile Include="farosDam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="farosDam.Designer.cs">
-      <DependentUpon>farosDam.cs</DependentUpon>
-    </Compile>
     <Compile Include="CargasVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +219,9 @@
     <EmbeddedResource Include="Castelar.resx">
       <DependentUpon>Castelar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dam.resx">
+      <DependentUpon>Dam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Distrimar.resx">
       <DependentUpon>Distrimar.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Espejos.resx">
       <DependentUpon>Espejos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="farosDam.resx">
-      <DependentUpon>farosDam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CargasVentas.resx">
       <DependentUpon>CargasVentas.cs</DependentUpon>
