@@ -31,7 +31,7 @@ namespace MyTeamApp
                 Dam_SQLSERVER sql = new Dam_SQLSERVER();
 
                 //sql.InsertarPreciosBulk(dt, barCastelar);
-                sql.InsertarPreciosTrans(dt, barCastelar);
+                sql.InsertarPreciosBulk(dt, barCastelar);
 
             }
         }

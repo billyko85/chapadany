@@ -182,7 +182,7 @@ namespace MyTeamApp
 
         private void dAMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new farosDam();
+            Form f = new Dam();
             f.MdiParent = this;
             f.Show();
         }
