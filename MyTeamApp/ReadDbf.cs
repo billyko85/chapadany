@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 
 // Read an entire standard DBF file into a DataTable
 public class ReadDbf
@@ -167,7 +168,7 @@ public class ReadDbf
                             {
                                 if (number.IndexOf(".") > -1)
                                 {
-                                    row[fieldIndex] = decimal.Parse(number);
+                                    row[fieldIndex] = Decimal.Parse(number, CultureInfo.InvariantCulture);
                                 }
                                 else
                                 {
