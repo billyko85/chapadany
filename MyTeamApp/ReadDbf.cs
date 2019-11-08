@@ -134,7 +134,8 @@ public class ReadDbf
                         col = new DataColumn(field.fieldName, typeof(Double));
                         break;
                 }
-                dt.Columns.Add(col);
+                if (field.fieldType != '0')
+                    dt.Columns.Add(col);
             }
 
             // Skip past the end of the header. 

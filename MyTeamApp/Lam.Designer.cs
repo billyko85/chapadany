@@ -60,6 +60,7 @@
             this.btnLoadDBF.TabIndex = 5;
             this.btnLoadDBF.Text = "Cargar";
             this.btnLoadDBF.UseVisualStyleBackColor = true;
+            this.btnLoadDBF.Click += new System.EventHandler(this.btnLoadDBF_Click);
             // 
             // grdDBF
             // 

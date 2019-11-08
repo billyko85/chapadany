@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyTeamApp
 {
-    public partial class Dam : Form
+    public partial class EdyLuz : Form
     {
-        public Dam()
+        public EdyLuz()
         {
             InitializeComponent();
         }
@@ -28,27 +28,10 @@ namespace MyTeamApp
                 DataTable dt = ReadDbf.ReadDBF(ofd.FileName);
                 grdDBF.DataSource = dt;
 
-                Dam_SQLSERVER sql = new Dam_SQLSERVER();
+                Proveedores_SQLSERVER sql = new Proveedores_SQLSERVER();
 
-                //sql.InsertarPreciosBulk(dt, barCastelar);
-                sql.InsertarPreciosBulk(dt, barCastelar);
-
+                sql.InsertarPreciosBulk(dt, barCastelar, "EdyLuz");
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barCastelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdDBF_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+           }
     }
 }

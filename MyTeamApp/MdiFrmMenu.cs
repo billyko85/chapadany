@@ -223,5 +223,12 @@ namespace MyTeamApp
             f.Show();
 
         }
+
+        private void listaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form f = new EdyLuz();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

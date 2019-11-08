@@ -59,6 +59,8 @@
             this.lamToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(923, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1099, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -121,7 +123,7 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.listaToolStripMenuItem.Text = "Lista";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
@@ -260,10 +262,11 @@
             this.castelarToolStripMenuItem,
             this.distrimarToolStripMenuItem,
             this.lAMToolStripMenuItem,
-            this.toolStripMenuItem4});
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem2});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(923, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1099, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
@@ -298,11 +301,26 @@
             this.toolStripMenuItem5.Text = "Dm Appweb";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaToolStripMenuItem1});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(56, 20);
+            this.toolStripMenuItem2.Text = "EdyLuz";
+            // 
+            // listaToolStripMenuItem1
+            // 
+            this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
+            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem1.Text = "Lista";
+            this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
+            // 
             // MdiFrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 453);
+            this.ClientSize = new System.Drawing.Size(1099, 453);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -351,6 +369,8 @@
         private System.Windows.Forms.ToolStripMenuItem lamToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem1;
     }
 }
 
