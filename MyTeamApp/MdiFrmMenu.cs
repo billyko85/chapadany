@@ -230,5 +230,12 @@ namespace MyTeamApp
             f.MdiParent = this;
             f.Show();
         }
+
+        private void faroLamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new Faros_Fal();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

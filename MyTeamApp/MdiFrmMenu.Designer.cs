@@ -61,6 +61,7 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.faroLamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -213,7 +214,7 @@
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -263,7 +264,8 @@
             this.distrimarToolStripMenuItem,
             this.lAMToolStripMenuItem,
             this.toolStripMenuItem4,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.faroLamToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1099, 24);
@@ -312,9 +314,16 @@
             // listaToolStripMenuItem1
             // 
             this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
+            // 
+            // faroLamToolStripMenuItem
+            // 
+            this.faroLamToolStripMenuItem.Name = "faroLamToolStripMenuItem";
+            this.faroLamToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.faroLamToolStripMenuItem.Text = "Faro lam";
+            this.faroLamToolStripMenuItem.Click += new System.EventHandler(this.faroLamToolStripMenuItem_Click);
             // 
             // MdiFrmMenu
             // 
@@ -371,6 +380,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem faroLamToolStripMenuItem;
     }
 }
 

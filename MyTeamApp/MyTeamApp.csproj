@@ -92,6 +92,13 @@
     <Compile Include="Castelar.Designer.cs">
       <DependentUpon>Castelar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Faros Fal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faros Fal.Designer.cs">
+      <DependentUpon>Faros Fal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyExceFal.cs" />
     <Compile Include="Proveedores_SQLSERVER.cs" />
     <Compile Include="Dam_SQLSERVER.cs" />
     <Compile Include="Dam.cs">
@@ -262,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CargasVentas.resx">
       <DependentUpon>CargasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faros Fal.resx">
+      <DependentUpon>Faros Fal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lam.resx">
       <DependentUpon>Lam.cs</DependentUpon>
