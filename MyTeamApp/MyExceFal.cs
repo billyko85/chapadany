@@ -133,6 +133,8 @@ namespace MyTeamApp
 
             //EmpList.Clear();
 
+            string categoria = string.Empty;
+
             for (int sheet = 2; sheet <  11; sheet++)
             {
         
@@ -148,23 +150,32 @@ namespace MyTeamApp
                 {
                     System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
-                    string columA = MyValues.GetValue(1, 0) != null ? MyValues.GetValue(1, 0).ToString().Trim() : string.Empty;
-                    string columB = MyValues.GetValue(1, 1) != null ? MyValues.GetValue(1, 1).ToString().Trim() : string.Empty;
-                    string columC = MyValues.GetValue(1, 2) != null ? MyValues.GetValue(1, 2).ToString().Trim() : string.Empty;
-                    string columD = MyValues.GetValue(1, 3) != null ? MyValues.GetValue(1, 3).ToString().Trim() : string.Empty;
-                    E
+                    string columA = MyValues.GetValue(1, 1) != null ? MyValues.GetValue(1, 1).ToString().Trim() : string.Empty;
+                    string columB = MyValues.GetValue(1, 2) != null ? MyValues.GetValue(1, 2).ToString().Trim() : string.Empty;
+                    string columC = MyValues.GetValue(1, 3) != null ? MyValues.GetValue(1, 3).ToString().Trim() : string.Empty;
+                    string columD = MyValues.GetValue(1, 4) != null ? MyValues.GetValue(1, 4).ToString().Trim() : string.Empty;
+                    string columE = MyValues.GetValue(1, 5) != null ? MyValues.GetValue(1, 5).ToString().Trim() : string.Empty;
 
-                    if ()
-                    
-                    row = registros.NewRow();
-                    row[0] = marca;
-                    row[1] = MyValues.GetValue(1, 0) != null ? MyValues.GetValue(1, 1).ToString().Trim() : string.Empty;
-                    row[1] = MyValues.GetValue(1, 2) != null ? MyValues.GetValue(1, 2).ToString().Trim() : string.Empty;
-                    row[2] = MyValues.GetValue(1, 3) != null ? MyValues.GetValue(1, 3).ToString().Trim() : string.Empty;
 
-                    //row[3] = MyValues.GetValue(1, 4).ToString().Trim().Replace('.',',');
-      
-                    registros.Rows.Add(row);
+                    if (columA == string.Empty && columB != string.Empty && columC != string.Empty && columD == string.Empty)
+                    {
+                        categoria = columC;
+                    }
+
+                    if (columA != string.Empty && columB != string.Empty && columC != string.Empty && columE != string.Empty)
+                    {
+
+                        row = registros.NewRow();
+
+                        row[0] = marca ; //"Marca"
+                        row[1] = categoria; //"Categoria"
+                        row[2] = columA; //"Codigo"
+                        row[3] = columC; //"Descripcion"
+                        row[4] = columE; //"Precio"
+
+                        registros.Rows.Add(row);
+                    }
+
                 }
 
             }
