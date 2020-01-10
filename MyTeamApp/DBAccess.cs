@@ -8,7 +8,7 @@ using System.Data;
 
 namespace MyTeamApp
 {
-    class DBAccess
+    class DBAccess      
     {
         private OleDbConnection connection; 
 

@@ -1415,7 +1415,7 @@ namespace MyTeamApp
 
         //}
 
-        public void cargarBusquedaRPM(DataGridView grid, string queryOnTable, List<string> reqColumns = null, List<myQueryParameter> conditionalParams = null)
+        public void  cargarBusquedaRPM(DataGridView grid, string queryOnTable, List<string> reqColumns = null, List<myQueryParameter> conditionalParams = null)
     {
 
             StringBuilder sqlQueryBuilder = new StringBuilder();

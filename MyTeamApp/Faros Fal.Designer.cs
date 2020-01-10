@@ -38,14 +38,14 @@
             // dgFal
             // 
             this.dgFal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgFal.Location = new System.Drawing.Point(12, 149);
+            this.dgFal.Location = new System.Drawing.Point(12, 146);
             this.dgFal.Name = "dgFal";
             this.dgFal.Size = new System.Drawing.Size(909, 339);
             this.dgFal.TabIndex = 0;
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(102, 70);
+            this.btnCargar.Location = new System.Drawing.Point(453, 26);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 1;

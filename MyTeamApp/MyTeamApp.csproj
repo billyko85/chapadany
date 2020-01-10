@@ -99,6 +99,7 @@
       <DependentUpon>Faros Fal.cs</DependentUpon>
     </Compile>
     <Compile Include="MyExceFal.cs" />
+    <Compile Include="MyExcelSenesa.cs" />
     <Compile Include="Proveedores_SQLSERVER.cs" />
     <Compile Include="Dam_SQLSERVER.cs" />
     <Compile Include="Dam.cs">
@@ -209,6 +210,12 @@
     <Compile Include="MyExcelDmApp.cs" />
     <Compile Include="MyExcelDistrimar.cs" />
     <Compile Include="ReadDbf.cs" />
+    <Compile Include="Rpm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rpm.Designer.cs">
+      <DependentUpon>Rpm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SanFernet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chriva.resx">
       <DependentUpon>Chriva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpm.resx">
+      <DependentUpon>Rpm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanFernet.resx">
       <DependentUpon>SanFernet.cs</DependentUpon>

@@ -127,6 +127,11 @@ namespace MyTeamApp
             registros.Columns.Add(column);
 
             column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Lado";
+            registros.Columns.Add(column);
+
+            column = new DataColumn();
             column.DataType = System.Type.GetType("System.Double");
             column.ColumnName = "Precio";
             registros.Columns.Add(column);
@@ -171,9 +176,28 @@ namespace MyTeamApp
                         row[1] = categoria; //"Categoria"
                         row[2] = columA; //"Codigo"
                         row[3] = columC; //"Descripcion"
-                        row[4] = columE; //"Precio"
+                        row[4] = columD.Trim(); //"Lado"
+                        row[5] = columE; //"Precio"
 
-                        registros.Rows.Add(row);
+                        if (columD.Trim() != string.Empty)
+                        {
+                            row[2] = row[2] + "DER";
+                            registros.Rows.Add(row);
+
+                            row = registros.NewRow();
+
+                            row[0] = marca; //"Marca"
+                            row[1] = categoria; //"Categoria"
+                            row[2] = columA + "IZQ";
+                            row[3] = columC; //"Descripcion"
+                            row[4] = columD.Trim(); //"Lado"
+                            row[5] = columE; //"Precio"
+                            registros.Rows.Add(row);
+                        }    
+                        else
+                           registros.Rows.Add(row);
+
+
                     }
 
                 }
