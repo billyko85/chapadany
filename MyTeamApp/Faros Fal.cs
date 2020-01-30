@@ -28,14 +28,25 @@ namespace MyTeamApp
             ExcelDialog.Title = "Elegir archivo";
             if (ExcelDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MyExcelFal.DB_PATH = ExcelDialog.FileName;
-                txtPathFile.Text = ExcelDialog.FileName;
-                txtPathFile.ReadOnly = true;
-                btnCargar.Enabled = false;
-                MyExcelFal.InitializeExcel();
-                dgFal.DataSource = MyExcelFal.ReadMyExcel_DataTable();
 
-                dbConnect.InsertarPreciosBulk(MyExcelFal.ReadMyExcel_DataTable(),progressBar1, "FarosFal");
+                if (RadioFal.Checked == true)
+                {
+                    MyExcelFal.DB_PATH = ExcelDialog.FileName;
+                    txtPathFile.Text = ExcelDialog.FileName;
+                    txtPathFile.ReadOnly = true;
+                    btnCargar.Enabled = false;
+                    MyExcelFal.InitializeExcel();
+                    dgFal.DataSource = MyExcelFal.ReadMyExcel_DataTable();
+                    dbConnect.InsertarPreciosBulk(MyExcelFal.ReadMyExcel_DataTable(), progressBar1, "FarosFal");
+                }
+                if (radioSenesa.Checked == true)
+                {
+                    MyExcelSenesa.DB_PATH = ExcelDialog.FileName;
+
+                }
+
+                
+
             }
         }
     }

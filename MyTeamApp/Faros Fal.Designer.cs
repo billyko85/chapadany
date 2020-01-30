@@ -32,6 +32,8 @@
             this.btnCargar = new System.Windows.Forms.Button();
             this.txtPathFile = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.RadioFal = new System.Windows.Forms.RadioButton();
+            this.radioSenesa = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgFal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(453, 26);
+            this.btnCargar.Location = new System.Drawing.Point(386, 26);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 1;
@@ -67,11 +69,35 @@
             this.progressBar1.Size = new System.Drawing.Size(909, 23);
             this.progressBar1.TabIndex = 3;
             // 
+            // RadioFal
+            // 
+            this.RadioFal.AutoSize = true;
+            this.RadioFal.Location = new System.Drawing.Point(56, 69);
+            this.RadioFal.Name = "RadioFal";
+            this.RadioFal.Size = new System.Drawing.Size(71, 17);
+            this.RadioFal.TabIndex = 4;
+            this.RadioFal.TabStop = true;
+            this.RadioFal.Text = "Faros Fal ";
+            this.RadioFal.UseVisualStyleBackColor = true;
+            // 
+            // radioSenesa
+            // 
+            this.radioSenesa.AutoSize = true;
+            this.radioSenesa.Location = new System.Drawing.Point(133, 69);
+            this.radioSenesa.Name = "radioSenesa";
+            this.radioSenesa.Size = new System.Drawing.Size(61, 17);
+            this.radioSenesa.TabIndex = 5;
+            this.radioSenesa.TabStop = true;
+            this.radioSenesa.Text = "Senesa";
+            this.radioSenesa.UseVisualStyleBackColor = true;
+            // 
             // Faros_Fal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 500);
+            this.Controls.Add(this.radioSenesa);
+            this.Controls.Add(this.RadioFal);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.txtPathFile);
             this.Controls.Add(this.btnCargar);
@@ -90,5 +116,7 @@
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.TextBox txtPathFile;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.RadioButton RadioFal;
+        private System.Windows.Forms.RadioButton radioSenesa;
     }
 }
