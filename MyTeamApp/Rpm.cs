@@ -13,16 +13,19 @@ namespace MyTeamApp
     public partial class Rpm : Form
     {
 
+        private Proveedores_SQLSERVER dbConnect;
 
 
         public Rpm()
         {
             InitializeComponent();
+            dbConnect = new Proveedores_SQLSERVER();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             DBAccess db1 = new DBAccess();
+            DataTable datos = null;
 
             OpenFileDialog ExcelDialog = new OpenFileDialog();
             //            ExcelDialog.Filter = "Excel Files (*.xlsx) | *.xlsx";
@@ -30,19 +33,18 @@ namespace MyTeamApp
             ExcelDialog.Title = "Elegir archivo";
             if (ExcelDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MyExcelDmApp.DB_PATH = ExcelDialog.FileName;
                 txtFileName.Text = ExcelDialog.FileName;
                 txtFileName.ReadOnly = true;
                 txtFileName.Click -= button1_Click;
                 button1.Enabled = false;
-                MyExcelDmApp.InitializeExcel();
 
-                //db1.OpenConnection(archivo);
+                datos = db1.cargarTablaRPM(ExcelDialog.FileName);
+
+                dbConnect.InsertarPreciosBulk(datos, progressBar1, "Rpm");
+
+                dataGridView1.DataSource = datos;
 
 
-                //dataGridEmpList.DataSource = MyExcelDmApp.ReadMyExcel();
-
-                //dbConnect.InsertarDmArticulosAppBulk(MyExcelDmApp.ReadMyExcel_DataTable(), Bar);
             }
         }
     }

@@ -55,7 +55,7 @@ namespace MyTeamApp
 
         private void btnInsertarArt_Click(object sender, EventArgs e)
         {
-            dbAccess.cargarTabla(dataGridVB, txtCodProd.Text, txtMDB.Text);
+            //dbAccess.cargarTabla(dataGridVB, txtCodProd.Text, txtMDB.Text);
         }
 
         private void CargasInicial_Load(object sender, EventArgs e)

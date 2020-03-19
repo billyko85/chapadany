@@ -27,7 +27,7 @@ namespace MyTeamApp
             //C:\Users\billyko\Drive ChapaDany\Listas\db1.mdb
 
             connection = new OleDbConnection
-                ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source = " + archivo + " ; Persist Security Info=False");
+                ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source= " + archivo );
             
 
             try
@@ -68,26 +68,47 @@ namespace MyTeamApp
         }
 
 
-        public void cargarTabla(System.Windows.Forms.DataGridView grid, string codProd, string archivo)
-        {
-            string sql = "SELECT productos.auto, productos.marca, productos.Descrip,  marprov.Marca, compras.codart, compras.Cantidad, "+
-                "controlcompras.Fecha, provedores.nombre, productos.ventas, productos.stock " +
-"FROM(((compras LEFT JOIN productos ON compras.codart = productos.codProd) " +
-"LEFT JOIN marprov ON productos.MarProd = marprov.Codigo) " +
-"LEFT JOIN controlcompras ON compras.codcompra = controlcompras.codcompra) " +
-"LEFT JOIN provedores ON controlcompras.codprov = provedores.codprov " +
-"WHERE(((productos.CodProd) = ";
+        public DataTable cargarTablaRPM( string archivo){
+
+            DataTable salida;
+            string sql = "select arterc as codigo_proveedor, arcuar as codigo_prov2,RBDESC AS MARCA, " +
+"armode as modelo, proveedo.prrazo as fabricante, familias.fadesc as categoria, ardesc as descripcion, " +
+"armode as datos_extra  , aroo as precio from ((articulo  inner join rubros  on articulo.arrub2 = rubros.rbcodi) " +
+"inner join familias on articulo.arflia = familias.facodi) inner join proveedo on proveedo.prcodi = articulo.arprov";
 
 
             OpenConnection(archivo);
 
-            OleDbDataAdapter adap = new OleDbDataAdapter ( sql + codProd + "))", connection);
+            OleDbDataAdapter adap = new OleDbDataAdapter(sql, connection);
+
+
+            DataSet dsDatos = new DataSet();
+            adap.Fill(dsDatos);
+
+            salida = dsDatos.Tables[0];
+
+            CloseConnection();
+
+            return salida;
+        }
+
+        public void cargarTabla(System.Windows.Forms.DataGridView grid, string codProd, string archivo)
+        {
+            string sql = "select arterc as codigo_proveedor, arcuar as codigo_prov2,RBDESC AS MARCA, " +
+"armode as modelo, proveedo.prrazo as fabricante, familias.fadesc as categoria, ardesc as descripcion, " +
+"armode as datos_extra  , aroo as precio from ((articulo  inner join rubros  on articulo.arrub2 = rubros.rbcodi) " +
+"inner join familias on articulo.arflia = familias.facodi) inner join proveedo on proveedo.prcodi = articulo.arprov";
+
+
+            OpenConnection(archivo);
+
+            OleDbDataAdapter adap = new OleDbDataAdapter ( sql, connection);
             
 
             DataSet dsDatos = new DataSet();
-            adap.Fill(dsDatos,"compras");
+            adap.Fill(dsDatos);
 
-            grid.DataSource = dsDatos.Tables["compras"];
+            grid.DataSource = dsDatos.Tables[0];
 
             CloseConnection();
 

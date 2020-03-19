@@ -19,6 +19,22 @@ namespace MyTeamApp
 
 
 
+        public void eliminarRepetidos()
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
 
         public void InsertarPreciosBulk(DataTable dataGrid, ProgressBar bar, string tabla)
         {

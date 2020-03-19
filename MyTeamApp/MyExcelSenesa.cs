@@ -120,7 +120,7 @@ namespace MyTeamApp
 
             marca = string.Empty;
 
-            for (int index = 4; index <= lastRow; index++)
+            for (int index = 14; index <= lastRow; index++)
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
@@ -128,13 +128,14 @@ namespace MyTeamApp
                 {
                     marca = MyValues.GetValue(1, 1).ToString();
                 }
-                else
-                {     
+                else if ((MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 3) != null && MyValues.GetValue(1, 9) != null) &&
+                         (MyValues.GetValue(1, 1).ToString() != "CODIGO") )
+                    {     
                     row = registros.NewRow();
                     row[0] = marca;
-                    row[1] = MyValues.GetValue(1, 2);
+                    row[1] = MyValues.GetValue(1, 1);
                     row[2] = MyValues.GetValue(1, 3);
-                    row[3] = MyValues.GetValue(1, 4).ToString().Trim().Replace('.',',');
+                    row[3] = MyValues.GetValue(1, 9).ToString().Trim().Replace('.',',');
                     registros.Rows.Add(row);
                 }
 

@@ -233,9 +233,17 @@ namespace MyTeamApp
 
         private void faroLamToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new Faros_Fal();
+            Form f = new ListasExcel();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void rPMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new Rpm();
+            f.MdiParent = this;
+            f.Show();
+
         }
     }
 }

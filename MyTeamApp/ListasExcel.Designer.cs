@@ -1,6 +1,6 @@
 ﻿namespace MyTeamApp
 {
-    partial class Faros_Fal
+    partial class ListasExcel
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.RadioFal = new System.Windows.Forms.RadioButton();
             this.radioSenesa = new System.Windows.Forms.RadioButton();
+            this.rbDelviso = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgFal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,18 +92,30 @@
             this.radioSenesa.Text = "Senesa";
             this.radioSenesa.UseVisualStyleBackColor = true;
             // 
-            // Faros_Fal
+            // rbDelviso
+            // 
+            this.rbDelviso.AutoSize = true;
+            this.rbDelviso.Location = new System.Drawing.Point(200, 69);
+            this.rbDelviso.Name = "rbDelviso";
+            this.rbDelviso.Size = new System.Drawing.Size(60, 17);
+            this.rbDelviso.TabIndex = 6;
+            this.rbDelviso.TabStop = true;
+            this.rbDelviso.Text = "Delviso";
+            this.rbDelviso.UseVisualStyleBackColor = true;
+            // 
+            // ListasExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 500);
+            this.Controls.Add(this.rbDelviso);
             this.Controls.Add(this.radioSenesa);
             this.Controls.Add(this.RadioFal);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.txtPathFile);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgFal);
-            this.Name = "Faros_Fal";
+            this.Name = "ListasExcel";
             this.Text = "Faros_Fal";
             ((System.ComponentModel.ISupportInitialize)(this.dgFal)).EndInit();
             this.ResumeLayout(false);
@@ -118,5 +131,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.RadioButton RadioFal;
         private System.Windows.Forms.RadioButton radioSenesa;
+        private System.Windows.Forms.RadioButton rbDelviso;
     }
 }

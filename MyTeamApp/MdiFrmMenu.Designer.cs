@@ -62,6 +62,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.faroLamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rPMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -70,9 +72,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Location = new System.Drawing.Point(0, 461);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1099, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1190, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -93,7 +95,7 @@
             // insertarArticulosToolStripMenuItem
             // 
             this.insertarArticulosToolStripMenuItem.Name = "insertarArticulosToolStripMenuItem";
-            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.insertarArticulosToolStripMenuItem.Text = "Insertar Articulos ";
             this.insertarArticulosToolStripMenuItem.Click += new System.EventHandler(this.insertarArticulosToolStripMenuItem_Click);
             // 
@@ -214,7 +216,7 @@
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -265,10 +267,11 @@
             this.lAMToolStripMenuItem,
             this.toolStripMenuItem4,
             this.toolStripMenuItem2,
-            this.faroLamToolStripMenuItem});
+            this.faroLamToolStripMenuItem,
+            this.toolStripMenuItem3});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1099, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1190, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
@@ -284,7 +287,7 @@
             // lamToolStripMenuItem1
             // 
             this.lamToolStripMenuItem1.Name = "lamToolStripMenuItem1";
-            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.lamToolStripMenuItem1.Text = "Lam";
             this.lamToolStripMenuItem1.Click += new System.EventHandler(this.lamToolStripMenuItem1_Click);
             // 
@@ -314,22 +317,37 @@
             // listaToolStripMenuItem1
             // 
             this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
             // 
             // faroLamToolStripMenuItem
             // 
             this.faroLamToolStripMenuItem.Name = "faroLamToolStripMenuItem";
-            this.faroLamToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.faroLamToolStripMenuItem.Text = "Faro lam";
+            this.faroLamToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.faroLamToolStripMenuItem.Text = "Listas Excel";
             this.faroLamToolStripMenuItem.Click += new System.EventHandler(this.faroLamToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rPMToolStripMenuItem});
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(44, 20);
+            this.toolStripMenuItem3.Text = "RPM";
+            // 
+            // rPMToolStripMenuItem
+            // 
+            this.rPMToolStripMenuItem.Name = "rPMToolStripMenuItem";
+            this.rPMToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.rPMToolStripMenuItem.Text = "RPM";
+            this.rPMToolStripMenuItem.Click += new System.EventHandler(this.rPMToolStripMenuItem_Click);
             // 
             // MdiFrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1099, 453);
+            this.ClientSize = new System.Drawing.Size(1190, 483);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -381,6 +399,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem faroLamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem rPMToolStripMenuItem;
     }
 }
 

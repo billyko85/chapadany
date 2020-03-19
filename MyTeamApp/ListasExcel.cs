@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace MyTeamApp
 {
-    public partial class Faros_Fal : Form
+    public partial class ListasExcel : Form
     {
         private Proveedores_SQLSERVER dbConnect;
 
-        public Faros_Fal()
+        public ListasExcel()
         {
             InitializeComponent();
             dbConnect = new Proveedores_SQLSERVER();
@@ -22,6 +22,7 @@ namespace MyTeamApp
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            DataTable datos;
             OpenFileDialog ExcelDialog = new OpenFileDialog();
             //            ExcelDialog.Filter = "Excel Files (*.xlsx) | *.xlsx";
             ExcelDialog.InitialDirectory = @"C:\Users\billyko\Downloads";
@@ -36,16 +37,36 @@ namespace MyTeamApp
                     txtPathFile.ReadOnly = true;
                     btnCargar.Enabled = false;
                     MyExcelFal.InitializeExcel();
-                    dgFal.DataSource = MyExcelFal.ReadMyExcel_DataTable();
-                    dbConnect.InsertarPreciosBulk(MyExcelFal.ReadMyExcel_DataTable(), progressBar1, "FarosFal");
+                    datos = MyExcelFal.ReadMyExcel_DataTable();
+                    dgFal.DataSource = datos;
+                    dbConnect.InsertarPreciosBulk(datos, progressBar1, "FarosFal");
                 }
                 if (radioSenesa.Checked == true)
                 {
                     MyExcelSenesa.DB_PATH = ExcelDialog.FileName;
 
+                    txtPathFile.Text = ExcelDialog.FileName;
+                    txtPathFile.ReadOnly = true;
+                    btnCargar.Enabled = false;
+                    MyExcelSenesa.InitializeExcel();
+                    dgFal.DataSource = MyExcelSenesa.ReadMyExcel_DataTable();
+                    dbConnect.InsertarPreciosBulk(MyExcelSenesa.ReadMyExcel_DataTable(), progressBar1, "Senesa");
+
                 }
 
-                
+                if (rbDelviso.Checked == true)
+                {
+                    MyExcelDelviso.DB_PATH = ExcelDialog.FileName;
+
+                    txtPathFile.Text = ExcelDialog.FileName;
+                    txtPathFile.ReadOnly = true;
+                    btnCargar.Enabled = false;
+                    MyExcelDelviso.InitializeExcel();
+                    dgFal.DataSource = MyExcelDelviso.ReadMyExcel_DataTable();
+                    dbConnect.InsertarPreciosBulk(MyExcelDelviso.ReadMyExcel_DataTable(), progressBar1, "DelvisoExcel");
+
+                }
+
 
             }
         }

@@ -73,9 +73,9 @@ public class ReadDbf
         }
 
         BinaryReader br = null;
-        try
-        {
-            // Read the header into a buffer
+        //try
+        //{
+        //    // Read the header into a buffer
             br = new BinaryReader(File.OpenRead(dbfFile));
             byte[] buffer = br.ReadBytes(Marshal.SizeOf(typeof(DBFHeader)));
 
@@ -132,6 +132,9 @@ public class ReadDbf
                         break;
                     case 'F':
                         col = new DataColumn(field.fieldName, typeof(Double));
+                        break;
+                    default:
+                        col = new DataColumn(field.fieldName, typeof(string));
                         break;
                 }
                 if (field.fieldType != '0')
@@ -229,6 +232,8 @@ public class ReadDbf
 
                         case 'F':
                             number = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
+                        number.Trim();
+                        number.Replace(" ", string.Empty);
                             if (IsNumber(number))
                             {
                                 row[fieldIndex] = double.Parse(number);
@@ -245,19 +250,19 @@ public class ReadDbf
                 recReader.Close();
                 dt.Rows.Add(row);
             }
-        }
+        //}
 
-        catch
-        {
-            throw;
-        }
-        finally
-        {
-            if (null != br)
-            {
-                br.Close();
-            }
-        }
+        //catch(Exception ms)
+        //{
+        //    throw;
+        //}
+        //finally
+        //{
+        //    if (null != br)
+        //    {
+        //        br.Close();
+        //    }
+        //}
 
         long count = DateTime.Now.Ticks - start;
 
