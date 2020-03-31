@@ -138,13 +138,7 @@ namespace MyTeamApp
             f.MdiParent = this;
             f.Show();
         }
-
-        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form f = new Otero();
-            f.MdiParent = this;
-            f.Show();
-        }
+        
 
         private void cargasToolStripMenuItem_Click(object sender, EventArgs e)
         {

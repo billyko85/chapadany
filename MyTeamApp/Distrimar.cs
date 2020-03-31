@@ -16,6 +16,7 @@ namespace MyTeamApp
     {
         private Distrimar_SQLSERVER dbConnect;
         const string vacio = "VACIO";
+        DataTable datosDistrimar;
 
         public Distrimar()
         {
@@ -85,6 +86,7 @@ namespace MyTeamApp
                 tabControl1.Selecting -= tabControl1_Selecting;
                 btnLoad.Enabled = false;
                 MyExcelDistrimar.InitializeExcel();
+
                 dataGridEmpList.DataSource = MyExcelDistrimar.ReadMyExcel();
             }
 

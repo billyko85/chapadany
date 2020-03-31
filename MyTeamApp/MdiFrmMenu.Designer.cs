@@ -38,8 +38,6 @@
             this.delVisoTransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DMToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oteroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargaInicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sanFernetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +93,7 @@
             // insertarArticulosToolStripMenuItem
             // 
             this.insertarArticulosToolStripMenuItem.Name = "insertarArticulosToolStripMenuItem";
-            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.insertarArticulosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.insertarArticulosToolStripMenuItem.Text = "Insertar Articulos ";
             this.insertarArticulosToolStripMenuItem.Click += new System.EventHandler(this.insertarArticulosToolStripMenuItem_Click);
             // 
@@ -130,21 +128,6 @@
             this.listaToolStripMenuItem.Text = "Lista";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
-            // oteroToolStripMenuItem
-            // 
-            this.oteroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mostrarToolStripMenuItem});
-            this.oteroToolStripMenuItem.Name = "oteroToolStripMenuItem";
-            this.oteroToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.oteroToolStripMenuItem.Text = "Otero";
-            // 
-            // mostrarToolStripMenuItem
-            // 
-            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.mostrarToolStripMenuItem.Text = "Mostrar";
-            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
-            // 
             // cargaInicialToolStripMenuItem
             // 
             this.cargaInicialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -156,7 +139,7 @@
             // cargasToolStripMenuItem
             // 
             this.cargasToolStripMenuItem.Name = "cargasToolStripMenuItem";
-            this.cargasToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.cargasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cargasToolStripMenuItem.Text = "Cargas";
             this.cargasToolStripMenuItem.Click += new System.EventHandler(this.cargasToolStripMenuItem_Click);
             // 
@@ -256,7 +239,6 @@
             this.toolStripMenuItem1,
             this.delVisoToolStripMenuItem,
             this.DMToolStripMenu,
-            this.oteroToolStripMenuItem,
             this.cargaInicialToolStripMenuItem,
             this.sanFernetToolStripMenuItem,
             this.chrivaToolStripMenuItem,
@@ -287,7 +269,7 @@
             // lamToolStripMenuItem1
             // 
             this.lamToolStripMenuItem1.Name = "lamToolStripMenuItem1";
-            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.lamToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
             this.lamToolStripMenuItem1.Text = "Lam";
             this.lamToolStripMenuItem1.Click += new System.EventHandler(this.lamToolStripMenuItem1_Click);
             // 
@@ -317,7 +299,7 @@
             // listaToolStripMenuItem1
             // 
             this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
             // 
@@ -375,8 +357,6 @@
         private System.Windows.Forms.ToolStripMenuItem delVisoTransToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DMToolStripMenu;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oteroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargaInicialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sanFernetToolStripMenuItem;

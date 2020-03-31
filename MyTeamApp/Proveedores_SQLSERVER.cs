@@ -14,7 +14,7 @@ namespace MyTeamApp
         private string connectionString =
             "Data Source = chapadany.database.windows.net; Initial Catalog = chapadany_prueba1;" +
             " Integrated Security = False; User ID = daniel; Password=andenopA*1;" +
-            "Connect Timeout = 60; Encrypt=False;TrustServerCertificate=False;" +
+            "Connect Timeout = 0; Encrypt=False;TrustServerCertificate=False;" +
             "ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
@@ -61,6 +61,8 @@ namespace MyTeamApp
             {
                 bulkCopy.DestinationTableName =
                     "dbo." + tabla;
+
+                bulkCopy.BulkCopyTimeout = 0;
 
                 try
                 {

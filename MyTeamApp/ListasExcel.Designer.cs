@@ -35,6 +35,7 @@
             this.RadioFal = new System.Windows.Forms.RadioButton();
             this.radioSenesa = new System.Windows.Forms.RadioButton();
             this.rbDelviso = new System.Windows.Forms.RadioButton();
+            this.rbOtero = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgFal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,23 @@
             this.rbDelviso.Text = "Delviso";
             this.rbDelviso.UseVisualStyleBackColor = true;
             // 
+            // rbOtero
+            // 
+            this.rbOtero.AutoSize = true;
+            this.rbOtero.Location = new System.Drawing.Point(267, 69);
+            this.rbOtero.Name = "rbOtero";
+            this.rbOtero.Size = new System.Drawing.Size(60, 17);
+            this.rbOtero.TabIndex = 7;
+            this.rbOtero.TabStop = true;
+            this.rbOtero.Text = "rbOtero";
+            this.rbOtero.UseVisualStyleBackColor = true;
+            // 
             // ListasExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 500);
+            this.Controls.Add(this.rbOtero);
             this.Controls.Add(this.rbDelviso);
             this.Controls.Add(this.radioSenesa);
             this.Controls.Add(this.RadioFal);
@@ -132,5 +145,6 @@
         private System.Windows.Forms.RadioButton RadioFal;
         private System.Windows.Forms.RadioButton radioSenesa;
         private System.Windows.Forms.RadioButton rbDelviso;
+        private System.Windows.Forms.RadioButton rbOtero;
     }
 }

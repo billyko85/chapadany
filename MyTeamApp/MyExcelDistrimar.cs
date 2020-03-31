@@ -15,9 +15,10 @@ namespace MyTeamApp
         public string Codigo { get; set; }
         public string Descrip { get; set; }
         public string Modelo { get; set; }
+        public string Descuento { get; set; }
         public string Precio { get; set; }
 
-        public ListaDistrimar(object _Fabrica, object _Codigo, object _Descrip, object _Modelo, object _Precio)
+        public ListaDistrimar(object _Fabrica, object _Codigo, object _Descrip, object _Modelo,object _Descuento, object _Precio)
         {
 
             if (_Fabrica != null) { 
@@ -27,6 +28,16 @@ namespace MyTeamApp
             {
                 Fabrica = string.Empty;
             }
+
+            if (_Descuento != null)
+            {
+                Descuento = _Descuento.ToString();
+            }
+            else
+            {
+                Descuento = string.Empty;
+            }
+
 
             if (_Codigo != null)
             { 
@@ -91,7 +102,7 @@ namespace MyTeamApp
 
             EmpList.Clear();
 
-                colum1 = "A"; colum2 = "E"; 
+                colum1 = "A"; colum2 = "F"; 
 
                 for (int index = 6; index <= lastRow; index++)
                 {
@@ -101,6 +112,7 @@ namespace MyTeamApp
                                                MyValues.GetValue(1, 2), 
                                                MyValues.GetValue(1, 3), 
                                                MyValues.GetValue(1, 4), 
+                                               MyValues.GetValue(1, 6),
                                                MyValues.GetValue(1, 5)));
                 }
             return EmpList;
@@ -111,19 +123,7 @@ namespace MyTeamApp
        public static void WriteToExcel(ListaDistrimar posicion)
 
         {
-            try
-            {
-                lastRow += 1;
-                MySheet.Cells[lastRow, 1] = posicion.Fabrica;
-                MySheet.Cells[lastRow, 2] = posicion.Codigo;
-                MySheet.Cells[lastRow, 3] = posicion.Descrip;
-                MySheet.Cells[lastRow, 4] = posicion.Descrip;
-                MySheet.Cells[lastRow, 5] = posicion.Descrip;
-                EmpList.Add(posicion);
-                MyBook.Save();
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message);  }
+          
 
         }
 

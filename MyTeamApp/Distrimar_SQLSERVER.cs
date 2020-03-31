@@ -26,12 +26,13 @@ namespace MyTeamApp
             bar.Minimum = 0;
             bar.Maximum = dataGrid.Rows.Count;
 
-            dt.Columns.AddRange(new DataColumn[5] 
+            dt.Columns.AddRange(new DataColumn[6] 
             {
                 new DataColumn("Fabrica", typeof(string)),
                 new DataColumn("Codigo", typeof(string)),
                 new DataColumn("Descrip",typeof(string)),
                 new DataColumn("Modelo",typeof(string)),
+                new DataColumn("Descuento",typeof(string)),
                 new DataColumn("Precio",typeof(float))
             });
 
@@ -42,7 +43,8 @@ namespace MyTeamApp
                         row.Cells[1].Value.ToString(),
                         row.Cells[2].Value.ToString(),
                         row.Cells[3].Value.ToString(),
-                        row.Cells[4].Value
+                        row.Cells[4].Value.ToString(),
+                        row.Cells[5].Value
                         );
 
                 bar.Increment(1);

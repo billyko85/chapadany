@@ -49,8 +49,9 @@ namespace MyTeamApp
                     txtPathFile.ReadOnly = true;
                     btnCargar.Enabled = false;
                     MyExcelSenesa.InitializeExcel();
-                    dgFal.DataSource = MyExcelSenesa.ReadMyExcel_DataTable();
-                    dbConnect.InsertarPreciosBulk(MyExcelSenesa.ReadMyExcel_DataTable(), progressBar1, "Senesa");
+                    datos = MyExcelSenesa.ReadMyExcel_DataTable();
+                    dgFal.DataSource = datos;
+                    dbConnect.InsertarPreciosBulk(datos, progressBar1, "Senesa");
 
                 }
 
@@ -62,13 +63,27 @@ namespace MyTeamApp
                     txtPathFile.ReadOnly = true;
                     btnCargar.Enabled = false;
                     MyExcelDelviso.InitializeExcel();
-                    dgFal.DataSource = MyExcelDelviso.ReadMyExcel_DataTable();
-                    dbConnect.InsertarPreciosBulk(MyExcelDelviso.ReadMyExcel_DataTable(), progressBar1, "DelvisoExcel");
+                    datos = MyExcelDelviso.ReadMyExcel_DataTable();
+                    dgFal.DataSource = datos;
+                    dbConnect.InsertarPreciosBulk(datos, progressBar1, "DelvisoExcel");
 
                 }
 
+                if (rbOtero.Checked == true)
+                {
+                    MyExcelOtero.DB_PATH = ExcelDialog.FileName;
 
+                    txtPathFile.Text = ExcelDialog.FileName;
+                    txtPathFile.ReadOnly = true;
+                    btnCargar.Enabled = false;
+                    MyExcelOtero.InitializeExcel();
+                    datos = MyExcelOtero.ReadMyExcel_DataTable();
+                    dgFal.DataSource = datos;
+                    dbConnect.InsertarPreciosBulk(datos, progressBar1, "Otero");
+
+                }
             }
-        }
+         }
+
     }
 }
