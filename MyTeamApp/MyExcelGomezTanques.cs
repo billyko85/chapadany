@@ -79,23 +79,25 @@ namespace MyTeamApp
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range(colum1 + index.ToString(), colum2 + index.ToString()).Cells.Value;
 
-                string marca;
-
-                if (MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) = null)
+                if (MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 2) == null && MyValues.GetValue(1, 3) == null)
                 {
                     marca = MyValues.GetValue(1, 1).ToString().Trim();
                 }
 
 
-                if (MyValues.GetValue(1, 1) != null && MyValues.GetValue(1, 2) != null && MyValues.GetValue(1, 4) != null )
+                if (MyValues.GetValue(1, 1) != null &&
+                    MyValues.GetValue(1, 2) != null && MyValues.GetValue(1, 3) != null )
                 {     
-                    row = registros.NewRow();
-                    row[0] = marca;
-                    row[1] = MyValues.GetValue(1, 1).ToString().Trim();
-                    row[2] = MyValues.GetValue(1, 2).ToString().Trim();                    
-                    row[3] = MyValues.GetValue(1, 7).ToString().Trim().Replace(".","");
+                    if (MyValues.GetValue(1, 1).ToString().Trim() != "Art.")
+                    { 
+                        row = registros.NewRow();
+                        row[0] = marca;
+                        row[1] = MyValues.GetValue(1, 1).ToString().Trim();
+                        row[2] = MyValues.GetValue(1, 2).ToString().Trim();                    
+                        row[3] = MyValues.GetValue(1, 3).ToString().Trim().Replace(",","");
 
-                    registros.Rows.Add(row);
+                        registros.Rows.Add(row);
+                    }
                 }
 
                 

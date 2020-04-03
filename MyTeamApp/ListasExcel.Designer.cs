@@ -36,6 +36,7 @@
             this.radioSenesa = new System.Windows.Forms.RadioButton();
             this.rbDelviso = new System.Windows.Forms.RadioButton();
             this.rbOtero = new System.Windows.Forms.RadioButton();
+            this.rbGomez = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgFal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +116,23 @@
             this.rbOtero.Text = "rbOtero";
             this.rbOtero.UseVisualStyleBackColor = true;
             // 
+            // rbGomez
+            // 
+            this.rbGomez.AutoSize = true;
+            this.rbGomez.Location = new System.Drawing.Point(333, 69);
+            this.rbGomez.Name = "rbGomez";
+            this.rbGomez.Size = new System.Drawing.Size(97, 17);
+            this.rbGomez.TabIndex = 8;
+            this.rbGomez.TabStop = true;
+            this.rbGomez.Text = "GomezTorralba";
+            this.rbGomez.UseVisualStyleBackColor = true;
+            // 
             // ListasExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 500);
+            this.Controls.Add(this.rbGomez);
             this.Controls.Add(this.rbOtero);
             this.Controls.Add(this.rbDelviso);
             this.Controls.Add(this.radioSenesa);
@@ -146,5 +159,6 @@
         private System.Windows.Forms.RadioButton radioSenesa;
         private System.Windows.Forms.RadioButton rbDelviso;
         private System.Windows.Forms.RadioButton rbOtero;
+        private System.Windows.Forms.RadioButton rbGomez;
     }
 }

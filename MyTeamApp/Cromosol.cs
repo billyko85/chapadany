@@ -26,7 +26,6 @@ namespace MyTeamApp
         public int nro_Version_Lista = -1;
 
         private DBsqlCE dbsqlCe;
-        private DBMySQL dbMysql;
         private Cromosol_SQLSERVER dbCromosol;
     
         public FrmCromosol()

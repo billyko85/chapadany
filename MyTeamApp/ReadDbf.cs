@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 // Read an entire standard DBF file into a DataTable
 public class ReadDbf
@@ -163,60 +164,73 @@ public class ReadDbf
                 row = dt.NewRow();
                 foreach (FieldDescriptor field in fields)
                 {
-                    switch (field.fieldType)
-                    {
-                        case 'N':  // Number
-                                   // If you port this to .NET 2.0, use the Decimal.TryParse method
-                            number = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
-                            if (IsNumber(number))
+                switch (field.fieldType)
+                {
+                    case 'N':  // Number
+                               // If you port this to .NET 2.0, use the Decimal.TryParse method
+                        number = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
+                        if (IsNumber(number))
+                        {
+                            if (number.IndexOf(".") > -1)
                             {
-                                if (number.IndexOf(".") > -1)
-                                {
-                                    row[fieldIndex] = Decimal.Parse(number, CultureInfo.InvariantCulture);
-                                }
-                                else
-                                {
-                                    row[fieldIndex] = int.Parse(number);
-                                }
+                                row[fieldIndex] = Decimal.Parse(number, CultureInfo.InvariantCulture);
                             }
                             else
                             {
-                                row[fieldIndex] = 0;
+                                row[fieldIndex] = int.Parse(number);
                             }
+                        }
+                        else
+                        {
+                            row[fieldIndex] = 0;
+                        }
 
-                            break;
+                        break;
 
-                        case 'C': // String
-                            row[fieldIndex] = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
-                            break;
+                    case 'C': // String
+                        row[fieldIndex] = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
+                        break;
 
-                        case 'D': // Date (YYYYMMDD)
-                            year = Encoding.ASCII.GetString(recReader.ReadBytes(4));
-                            month = Encoding.ASCII.GetString(recReader.ReadBytes(2));
-                            day = Encoding.ASCII.GetString(recReader.ReadBytes(2));
-                            row[fieldIndex] = System.DBNull.Value;
-                            try
+                    case 'D': // Date (YYYYMMDD)
+                        year = Encoding.ASCII.GetString(recReader.ReadBytes(4));
+                        month = Encoding.ASCII.GetString(recReader.ReadBytes(2));
+                        day = Encoding.ASCII.GetString(recReader.ReadBytes(2));
+                        row[fieldIndex] = System.DBNull.Value;
+                        try
+                        {
+                            if (IsNumber(year) && IsNumber(month) && IsNumber(day))
                             {
-                                if (IsNumber(year) && IsNumber(month) && IsNumber(day))
+                                if ((Int32.Parse(year) > 1900))
                                 {
-                                    if ((Int32.Parse(year) > 1900))
-                                    {
-                                        row[fieldIndex] = new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day));
-                                    }
+                                    row[fieldIndex] = new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day));
                                 }
                             }
-                            catch
-                            { }
+                        }
+                        catch
+                        { }
 
-                            break;
+                        break;
 
-                        case 'T': // Timestamp, 8 bytes - two integers, first for date, second for time
-                                  // Date is the number of days since 01/01/4713 BC (Julian Days)
-                                  // Time is hours * 3600000L + minutes * 60000L + Seconds * 1000L (Milliseconds since midnight)
-                            lDate = recReader.ReadInt32();
-                            lTime = recReader.ReadInt32() * 10000L;
-                            row[fieldIndex] = JulianToDateTime(lDate).AddTicks(lTime);
-                            break;
+                    case 'T': // Timestamp, 8 bytes - two integers, first for date, second for time
+                              // Date is the number of days since 01/01/4713 BC (Julian Days)
+                              // Time is hours * 3600000L + minutes * 60000L + Seconds * 1000L (Milliseconds since midnight)
+
+                        lDate = recReader.ReadInt32();
+                        lTime = recReader.ReadInt32() * 10000L;
+                        //row[fieldIndex] = JulianToDateTime(lDate).AddTicks(lTime);
+
+                        short int16 = recReader.ReadInt16();
+                        int date = recReader.ReadInt32();
+                        byte[] bytes = recReader.ReadBytes(8);
+                        long int64 = recReader.ReadInt64();
+                        double dou = recReader.ReadDouble();
+                        uint uint32 = recReader.ReadUInt32();
+
+                        var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+                        dateTime = dateTime.AddSeconds((double)date);
+                        dateTime = dateTime.ToLocalTime();  // Change GMT time to your timezone
+    
+                        break;
 
                         case 'L': // Boolean (Y/N)
                             if ('Y' == recReader.ReadByte())
@@ -232,9 +246,13 @@ public class ReadDbf
 
                         case 'F':
                             number = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
-                        number.Trim();
-                        number.Replace(" ", string.Empty);
-                            if (IsNumber(number))
+                        //number.Trim();
+                        //number.Replace(" ", string.Empty);
+
+                        number = Regex.Replace(number, @"\s+", "");
+
+
+                        if (IsNumber(number))
                             {
                                 row[fieldIndex] = double.Parse(number);
                             }

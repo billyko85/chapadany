@@ -34,20 +34,10 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.insertarArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.delVisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.delVisoTransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DMToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargaInicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sanFernetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarSanfernetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chrivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insertarChrivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.farosDAMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dAMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.castelarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.castelarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.distrimarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +52,7 @@
             this.faroLamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.rPMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.derEncendidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -97,22 +88,6 @@
             this.insertarArticulosToolStripMenuItem.Text = "Insertar Articulos ";
             this.insertarArticulosToolStripMenuItem.Click += new System.EventHandler(this.insertarArticulosToolStripMenuItem_Click);
             // 
-            // delVisoToolStripMenuItem
-            // 
-            this.delVisoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.delVisoTransToolStripMenuItem});
-            this.delVisoToolStripMenuItem.Name = "delVisoToolStripMenuItem";
-            this.delVisoToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.delVisoToolStripMenuItem.Text = "DelViso";
-            this.delVisoToolStripMenuItem.Click += new System.EventHandler(this.delVisoToolStripMenuItem_Click);
-            // 
-            // delVisoTransToolStripMenuItem
-            // 
-            this.delVisoTransToolStripMenuItem.Name = "delVisoTransToolStripMenuItem";
-            this.delVisoTransToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.delVisoTransToolStripMenuItem.Text = "DelViso Trans";
-            this.delVisoTransToolStripMenuItem.Click += new System.EventHandler(this.delVisoTransToolStripMenuItem_Click);
-            // 
             // DMToolStripMenu
             // 
             this.DMToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -124,54 +99,9 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listaToolStripMenuItem.Text = "Lista";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
-            // 
-            // cargaInicialToolStripMenuItem
-            // 
-            this.cargaInicialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cargasToolStripMenuItem});
-            this.cargaInicialToolStripMenuItem.Name = "cargaInicialToolStripMenuItem";
-            this.cargaInicialToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.cargaInicialToolStripMenuItem.Text = "Carga Inicial";
-            // 
-            // cargasToolStripMenuItem
-            // 
-            this.cargasToolStripMenuItem.Name = "cargasToolStripMenuItem";
-            this.cargasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cargasToolStripMenuItem.Text = "Cargas";
-            this.cargasToolStripMenuItem.Click += new System.EventHandler(this.cargasToolStripMenuItem_Click);
-            // 
-            // sanFernetToolStripMenuItem
-            // 
-            this.sanFernetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actualizarSanfernetToolStripMenuItem});
-            this.sanFernetToolStripMenuItem.Name = "sanFernetToolStripMenuItem";
-            this.sanFernetToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.sanFernetToolStripMenuItem.Text = "SanFernet";
-            // 
-            // actualizarSanfernetToolStripMenuItem
-            // 
-            this.actualizarSanfernetToolStripMenuItem.Name = "actualizarSanfernetToolStripMenuItem";
-            this.actualizarSanfernetToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.actualizarSanfernetToolStripMenuItem.Text = "Actualizar Sanfernet";
-            this.actualizarSanfernetToolStripMenuItem.Click += new System.EventHandler(this.actualizarSanfernetToolStripMenuItem_Click);
-            // 
-            // chrivaToolStripMenuItem
-            // 
-            this.chrivaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.insertarChrivaToolStripMenuItem});
-            this.chrivaToolStripMenuItem.Name = "chrivaToolStripMenuItem";
-            this.chrivaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.chrivaToolStripMenuItem.Text = "Chriva";
-            // 
-            // insertarChrivaToolStripMenuItem
-            // 
-            this.insertarChrivaToolStripMenuItem.Name = "insertarChrivaToolStripMenuItem";
-            this.insertarChrivaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.insertarChrivaToolStripMenuItem.Text = "Insertar Chriva ";
-            this.insertarChrivaToolStripMenuItem.Click += new System.EventHandler(this.insertarChrivaToolStripMenuItem_Click);
             // 
             // farosDAMToolStripMenuItem
             // 
@@ -184,24 +114,9 @@
             // dAMToolStripMenuItem
             // 
             this.dAMToolStripMenuItem.Name = "dAMToolStripMenuItem";
-            this.dAMToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.dAMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dAMToolStripMenuItem.Text = "DAM";
             this.dAMToolStripMenuItem.Click += new System.EventHandler(this.dAMToolStripMenuItem_Click);
-            // 
-            // cargarVentasToolStripMenuItem
-            // 
-            this.cargarVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ventasToolStripMenuItem});
-            this.cargarVentasToolStripMenuItem.Name = "cargarVentasToolStripMenuItem";
-            this.cargarVentasToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.cargarVentasToolStripMenuItem.Text = "Cargar Ventas";
-            // 
-            // ventasToolStripMenuItem
-            // 
-            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.ventasToolStripMenuItem.Text = "Ventas";
-            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // castelarToolStripMenuItem
             // 
@@ -214,7 +129,7 @@
             // castelarToolStripMenuItem1
             // 
             this.castelarToolStripMenuItem1.Name = "castelarToolStripMenuItem1";
-            this.castelarToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.castelarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.castelarToolStripMenuItem1.Text = "Castelar";
             this.castelarToolStripMenuItem1.Click += new System.EventHandler(this.castelarToolStripMenuItem1_Click);
             // 
@@ -237,20 +152,16 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.delVisoToolStripMenuItem,
             this.DMToolStripMenu,
-            this.cargaInicialToolStripMenuItem,
-            this.sanFernetToolStripMenuItem,
-            this.chrivaToolStripMenuItem,
             this.farosDAMToolStripMenuItem,
-            this.cargarVentasToolStripMenuItem,
             this.castelarToolStripMenuItem,
             this.distrimarToolStripMenuItem,
             this.lAMToolStripMenuItem,
             this.toolStripMenuItem4,
             this.toolStripMenuItem2,
             this.faroLamToolStripMenuItem,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.derEncendidoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1190, 24);
@@ -325,6 +236,13 @@
             this.rPMToolStripMenuItem.Text = "RPM";
             this.rPMToolStripMenuItem.Click += new System.EventHandler(this.rPMToolStripMenuItem_Click);
             // 
+            // derEncendidoToolStripMenuItem
+            // 
+            this.derEncendidoToolStripMenuItem.Name = "derEncendidoToolStripMenuItem";
+            this.derEncendidoToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.derEncendidoToolStripMenuItem.Text = "Der Encendido";
+            this.derEncendidoToolStripMenuItem.Click += new System.EventHandler(this.derEncendidoToolStripMenuItem_Click);
+            // 
             // MdiFrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,20 +271,10 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem insertarArticulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem delVisoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem delVisoTransToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DMToolStripMenu;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargaInicialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sanFernetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarSanfernetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chrivaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem insertarChrivaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem farosDAMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dAMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargarVentasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem castelarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem castelarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem distrimarToolStripMenuItem;
@@ -381,6 +289,7 @@
         private System.Windows.Forms.ToolStripMenuItem faroLamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem rPMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem derEncendidoToolStripMenuItem;
     }
 }
 

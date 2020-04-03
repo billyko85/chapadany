@@ -127,9 +127,6 @@ namespace MyTeamApp
 
         private void formularioEquivalenciasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new Equivalencias();
-            f.MdiParent = this;
-            f.Show();
         }
 
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,9 +139,6 @@ namespace MyTeamApp
 
         private void cargasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new CargasInicial();
-            f.MdiParent = this;
-            f.Show();
         }
 
         private void delVisoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,25 +148,16 @@ namespace MyTeamApp
 
         private void delVisoTransToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new DelVisoTrans();
-            f.MdiParent = this;
-            f.Show();
-
+   
         }
 
         private void actualizarSanfernetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new SanFernet();
-            f.MdiParent = this;
-            f.Show();
         }
 
         private void insertarChrivaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new Chriva();
-            f.MdiParent = this;
-            f.Show();
-        }
+         }
 
         private void dAMToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -183,10 +168,7 @@ namespace MyTeamApp
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new CargasVentas();
-            f.MdiParent = this;
-            f.Show();
-        }
+       }
 
 
         private void castelarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -235,6 +217,14 @@ namespace MyTeamApp
         private void rPMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form f = new Rpm();
+            f.MdiParent = this;
+            f.Show();
+
+        }
+
+        private void derEncendidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new DerEncendido();
             f.MdiParent = this;
             f.Show();
 
