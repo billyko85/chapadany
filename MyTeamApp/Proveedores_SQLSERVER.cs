@@ -36,6 +36,7 @@ namespace MyTeamApp
 
         }
 
+   
         public void InsertarPreciosBulk(DataTable dataGrid, ProgressBar bar, string tabla)
         {
 
@@ -71,7 +72,7 @@ namespace MyTeamApp
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    MessageBox.Show( ex.Message + "\r\r" + ex.StackTrace, "Exception!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

@@ -16,7 +16,6 @@ namespace MyTeamApp
     {
         private Distrimar_SQLSERVER dbConnect;
         const string vacio = "VACIO";
-        DataTable datosDistrimar;
 
         public Distrimar()
         {

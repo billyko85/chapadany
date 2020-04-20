@@ -38,7 +38,7 @@ namespace MyTeamApp
             }
             
 
-            SqlCommand command = new SqlCommand("truncate table Castelar", conn);
+            SqlCommand command = new SqlCommand("truncate table CastelarVersionVieja", conn);
             command.ExecuteNonQuery();
 
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))

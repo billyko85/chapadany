@@ -215,20 +215,12 @@ public class ReadDbf
                               // Date is the number of days since 01/01/4713 BC (Julian Days)
                               // Time is hours * 3600000L + minutes * 60000L + Seconds * 1000L (Milliseconds since midnight)
 
-                        lDate = recReader.ReadInt32();
-                        lTime = recReader.ReadInt32() * 10000L;
-                        //row[fieldIndex] = JulianToDateTime(lDate).AddTicks(lTime);
-
-                        short int16 = recReader.ReadInt16();
-                        int date = recReader.ReadInt32();
-                        byte[] bytes = recReader.ReadBytes(8);
-                        long int64 = recReader.ReadInt64();
-                        double dou = recReader.ReadDouble();
-                        uint uint32 = recReader.ReadUInt32();
-
-                        var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-                        dateTime = dateTime.AddSeconds((double)date);
-                        dateTime = dateTime.ToLocalTime();  // Change GMT time to your timezone
+                        //2458791.5
+                        //int date = recReader.ReadInt32();
+             
+                        var dateTime = new DateTime(1975, 2, 1, 0, 0, 0, 0);
+                        //dateTime = dateTime.AddSeconds((double)date);
+                        //dateTime = dateTime.ToLocalTime();  // Change GMT time to your timezone
     
                         break;
 

@@ -18,8 +18,8 @@ namespace MyTeamApp
 
         private void btnLoadDBF_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "dBASE files (*.dbf)|*.dbf";
                 ofd.ShowDialog();
@@ -29,17 +29,16 @@ namespace MyTeamApp
                     DataTable dt = ReadDbf.ReadDBF(ofd.FileName);
                     grdDBF.DataSource = dt;
 
-                    Castelar_SQLSERVER sql = new Castelar_SQLSERVER();
+                Proveedores_SQLSERVER sql = new Proveedores_SQLSERVER();
 
-                    //sql.InsertarPreciosBulk(dt, barCastelar);
-                    sql.InsertarPreciosTrans(dt, barCastelar );
+                    sql.InsertarPreciosBulk(dt, barCastelar, "CastelarVersionVieja");
 
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(this, ex.Message + "\r\r" + ex.StackTrace, "Exception!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message + "\r\r" + ex.StackTrace, "Exception!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
