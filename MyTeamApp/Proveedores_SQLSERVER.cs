@@ -82,5 +82,49 @@ namespace MyTeamApp
 
         }
 
+
+        public void InsertarBulk(DataTable dataGrid, string tabla)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            SqlCommand command = new SqlCommand("truncate table " + tabla, conn);
+            command.ExecuteNonQuery();
+
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
+            {
+                bulkCopy.DestinationTableName =
+                    "dbo." + tabla;
+
+                bulkCopy.BulkCopyTimeout = 0;
+
+                try
+                {
+                    // Write from the source to the destination.
+                    bulkCopy.WriteToServer(dataGrid);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\r\r" + ex.StackTrace, "Exception!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            conn.Close();
+
+        }
+
+
+
+
     }
 }

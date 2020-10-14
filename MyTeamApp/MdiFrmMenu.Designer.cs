@@ -53,6 +53,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.rPMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.derEncendidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expoyerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +100,7 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.listaToolStripMenuItem.Text = "Lista";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
@@ -114,7 +115,7 @@
             // dAMToolStripMenuItem
             // 
             this.dAMToolStripMenuItem.Name = "dAMToolStripMenuItem";
-            this.dAMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dAMToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.dAMToolStripMenuItem.Text = "DAM";
             this.dAMToolStripMenuItem.Click += new System.EventHandler(this.dAMToolStripMenuItem_Click);
             // 
@@ -129,7 +130,7 @@
             // castelarToolStripMenuItem1
             // 
             this.castelarToolStripMenuItem1.Name = "castelarToolStripMenuItem1";
-            this.castelarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.castelarToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.castelarToolStripMenuItem1.Text = "Castelar";
             this.castelarToolStripMenuItem1.Click += new System.EventHandler(this.castelarToolStripMenuItem1_Click);
             // 
@@ -161,7 +162,8 @@
             this.toolStripMenuItem2,
             this.faroLamToolStripMenuItem,
             this.toolStripMenuItem3,
-            this.derEncendidoToolStripMenuItem});
+            this.derEncendidoToolStripMenuItem,
+            this.expoyerToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1190, 24);
@@ -243,6 +245,13 @@
             this.derEncendidoToolStripMenuItem.Text = "Der Encendido";
             this.derEncendidoToolStripMenuItem.Click += new System.EventHandler(this.derEncendidoToolStripMenuItem_Click);
             // 
+            // expoyerToolStripMenuItem
+            // 
+            this.expoyerToolStripMenuItem.Name = "expoyerToolStripMenuItem";
+            this.expoyerToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.expoyerToolStripMenuItem.Text = "Expoyer";
+            this.expoyerToolStripMenuItem.Click += new System.EventHandler(this.expoyerToolStripMenuItem_Click);
+            // 
             // MdiFrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +299,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem rPMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem derEncendidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expoyerToolStripMenuItem;
     }
 }
 

@@ -224,9 +224,17 @@ namespace MyTeamApp
 
         private void derEncendidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new DerEncendido();
-            f.MdiParent = this;
-            f.Show();
+        //    Form f = new DerEncendido();
+        //    f.MdiParent = this;
+        //    f.Show();
+
+        }
+
+        private void expoyerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                Form f = new FrmExpoyer();
+                f.MdiParent = this;
+                f.Show();
 
         }
     }

@@ -109,11 +109,11 @@
     <Compile Include="Castelar.Designer.cs">
       <DependentUpon>Castelar.cs</DependentUpon>
     </Compile>
-    <Compile Include="DerEncendido.cs">
+    <Compile Include="FrmExpoyer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DerEncendido.Designer.cs">
-      <DependentUpon>DerEncendido.cs</DependentUpon>
+    <Compile Include="FrmExpoyer.Designer.cs">
+      <DependentUpon>FrmExpoyer.cs</DependentUpon>
     </Compile>
     <Compile Include="ListasExcel.cs">
       <SubType>Form</SubType>
@@ -219,9 +219,6 @@
     <EmbeddedResource Include="Dam.resx">
       <DependentUpon>Dam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DerEncendido.resx">
-      <DependentUpon>DerEncendido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Distrimar.resx">
       <DependentUpon>Distrimar.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Espejos.resx">
       <DependentUpon>Espejos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExpoyer.resx">
+      <DependentUpon>FrmExpoyer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListasExcel.resx">
       <DependentUpon>ListasExcel.cs</DependentUpon>

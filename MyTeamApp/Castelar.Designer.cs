@@ -30,7 +30,6 @@
         {
             this.grdDBF = new System.Windows.Forms.DataGridView();
             this.btnLoadDBF = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.barCastelar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.grdDBF)).BeginInit();
             this.SuspendLayout();
@@ -53,16 +52,6 @@
             this.btnLoadDBF.UseVisualStyleBackColor = true;
             this.btnLoadDBF.Click += new System.EventHandler(this.btnLoadDBF_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Insertar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // barCastelar
             // 
             this.barCastelar.Location = new System.Drawing.Point(12, 67);
@@ -76,7 +65,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 492);
             this.Controls.Add(this.barCastelar);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLoadDBF);
             this.Controls.Add(this.grdDBF);
             this.Name = "Castelar";
@@ -90,7 +78,6 @@
 
         private System.Windows.Forms.DataGridView grdDBF;
         private System.Windows.Forms.Button btnLoadDBF;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar barCastelar;
     }
 }
