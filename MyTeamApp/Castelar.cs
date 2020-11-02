@@ -29,10 +29,10 @@ namespace MyTeamApp
                     DataTable dt = ReadDbf.ReadDBF(ofd.FileName);
                     grdDBF.DataSource = dt;
 
-                Proveedores_SQLSERVER sql = new Proveedores_SQLSERVER();
+                    Proveedores_SQLSERVER sql = new Proveedores_SQLSERVER();
 
-                    sql.InsertarPreciosBulk(dt, barCastelar, "CastelarVersionVieja");
-
+                    //sql.InsertarPreciosBulk(dt, barCastelar, "CastelarVersionVieja");
+                    sql.InsertarPreciosBulk(dt, barCastelar, "Castelar");
                 }
             }
             catch (Exception ex)

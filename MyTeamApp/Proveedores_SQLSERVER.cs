@@ -68,6 +68,7 @@ namespace MyTeamApp
                 try
                 {
                     // Write from the source to the destination.
+
                     bulkCopy.WriteToServer(dataGrid);
                 }
                 catch (Exception ex)

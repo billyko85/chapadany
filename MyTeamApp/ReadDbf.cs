@@ -188,7 +188,7 @@ public class ReadDbf
                         break;
 
                     case 'C': // String
-                        row[fieldIndex] = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen));
+                        row[fieldIndex] = Encoding.ASCII.GetString(recReader.ReadBytes(field.fieldLen)).Trim();
                         break;
 
                     case 'D': // Date (YYYYMMDD)

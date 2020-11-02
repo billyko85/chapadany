@@ -37,13 +37,13 @@ namespace MyTeamApp
 
                     string directorio = Dialog.InitialDirectory;
 
-                //string articulos = directorio + "\\articulos_v3.txt";
-                //DataTable datosArticulo = ReadText_DataTableArticulos(articulos);
-                //dbConnect.InsertarPreciosBulk(datosArticulo, progressBar1, "Expoyer");
+                string articulos = directorio + "\\articulos_v3.txt";
+                DataTable datosArticulo = ReadText_DataTableArticulos(articulos);
+                dbConnect.InsertarPreciosBulk(datosArticulo, progressBar1, "Expoyer");
 
-                //string marcas = directorio + "\\marcas_principales_v3.txt";
-                //DataTable datosMarcas = ReadText_DataTableMarcas(marcas);
-                //dbConnect.InsertarPreciosBulk(datosMarcas, progressBar1, "ExpoyerMarcas");
+                string marcas = directorio + "\\marcas_principales_v3.txt";
+                DataTable datosMarcas = ReadText_DataTableMarcas(marcas);
+                dbConnect.InsertarPreciosBulk(datosMarcas, progressBar1, "ExpoyerMarcas");
 
                 string rubros = directorio + "\\rubros_v3.txt";
                 DataTable datosRubros = ReadText_DataTableRubros(rubros);
