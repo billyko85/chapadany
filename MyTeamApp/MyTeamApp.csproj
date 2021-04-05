@@ -103,11 +103,25 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRPM2DataSet.cs">
+      <DependentUpon>BaseRPM2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaseRPM2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseRPM2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Castelar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Castelar.Designer.cs">
       <DependentUpon>Castelar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConBaseDBF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConBaseDBF.Designer.cs">
+      <DependentUpon>ConBaseDBF.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmExpoyer.cs">
       <SubType>Form</SubType>
@@ -216,6 +230,9 @@
     <EmbeddedResource Include="Castelar.resx">
       <DependentUpon>Castelar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConBaseDBF.resx">
+      <DependentUpon>ConBaseDBF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dam.resx">
       <DependentUpon>Dam.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +284,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="BaseRPM2DataSet.xsc">
+      <DependentUpon>BaseRPM2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseRPM2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseRPM2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseRPM2DataSet.xss">
+      <DependentUpon>BaseRPM2DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EmpConstants.datasource" />
     <None Include="Properties\DataSources\Employee.datasource" />

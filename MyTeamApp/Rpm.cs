@@ -47,5 +47,12 @@ namespace MyTeamApp
 
             }
         }
+
+        private void Rpm_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'baseRPM2DataSet.proveedo' Puede moverla o quitarla según sea necesario.
+            this.proveedoTableAdapter.Fill(this.baseRPM2DataSet.proveedo);
+
+        }
     }
 }

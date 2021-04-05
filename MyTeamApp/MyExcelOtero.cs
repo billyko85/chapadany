@@ -105,7 +105,19 @@ namespace MyTeamApp
                     row[4] = MyValues.GetValue(1, 5).ToString().Trim();
                     
                     row[5] = MyValues.GetValue(1, 7).ToString().Trim().Replace(".","");
-                    row[5] = row[5].ToString().Remove(row[5].ToString().Length - 2, 2);
+
+
+                    //try{
+
+                    //    if (row[5].ToString().Length > 2)
+                    //        row[5] = row[5].ToString().Remove(row[5].ToString().Length - 2, 2);
+                    //}
+
+                    //catch(Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.InnerException.ToString());    
+                    //}
+
 
                     if (MyValues.GetValue(1, 8) != null)
                     {

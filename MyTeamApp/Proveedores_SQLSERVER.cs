@@ -55,7 +55,7 @@ namespace MyTeamApp
             }
             
 
-            SqlCommand command = new SqlCommand("truncate table " + tabla, conn);
+            SqlCommand command = new SqlCommand("truncate table dbo." + tabla, conn);
             command.ExecuteNonQuery();
 
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))

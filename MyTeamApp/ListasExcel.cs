@@ -98,9 +98,26 @@ namespace MyTeamApp
 
                 }
 
+                if (rbVovchuck.Checked == true)
+                {
+                    //MyExcelGomezTanques.DB_PATH = ExcelDialog.FileName;
+
+                    //txtPathFile.Text = ExcelDialog.FileName;
+                    //txtPathFile.ReadOnly = true;
+                    //btnCargar.Enabled = false;
+                    //MyExcelGomezTanques.InitializeExcel();
+                    //datos = MyExcelGomezTanques.ReadMyExcel_DataTable();
+                    //dgFal.DataSource = datos;
+                    //dbConnect.InsertarPreciosBulk(datos, progressBar1, "TanquesGomezTorralba");
+
+                }
 
             }
          }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

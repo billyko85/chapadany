@@ -31,7 +31,6 @@ namespace MyTeamApp
 
                     Proveedores_SQLSERVER sql = new Proveedores_SQLSERVER();
 
-                    //sql.InsertarPreciosBulk(dt, barCastelar, "CastelarVersionVieja");
                     sql.InsertarPreciosBulk(dt, barCastelar, "Castelar");
                 }
             }
