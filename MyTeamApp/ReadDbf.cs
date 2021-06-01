@@ -74,8 +74,8 @@ public class ReadDbf
         }
 
         BinaryReader br = null;
-        //try
-        //{
+        try
+        {
         //    // Read the header into a buffer
             br = new BinaryReader(File.OpenRead(dbfFile));
             byte[] buffer = br.ReadBytes(Marshal.SizeOf(typeof(DBFHeader)));
@@ -260,12 +260,12 @@ public class ReadDbf
                 recReader.Close();
                 dt.Rows.Add(row);
             }
-        //}
+        }
 
-        //catch(Exception ms)
-        //{
-        //    throw;
-        //}
+        catch(Exception ms)
+        {
+            throw;
+        }
         //finally
         //{
         //    if (null != br)

@@ -103,6 +103,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarDelViso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarDelViso.Designer.cs">
+      <DependentUpon>ActualizarDelViso.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseRPM2DataSet.cs">
       <DependentUpon>BaseRPM2DataSet.xsd</DependentUpon>
     </Compile>
@@ -227,6 +233,9 @@
     <Compile Include="MyExcel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ActualizarDelViso.resx">
+      <DependentUpon>ActualizarDelViso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Castelar.resx">
       <DependentUpon>Castelar.cs</DependentUpon>
     </EmbeddedResource>
