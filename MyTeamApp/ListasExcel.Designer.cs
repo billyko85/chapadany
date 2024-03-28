@@ -38,7 +38,7 @@
             this.rbOtero = new System.Windows.Forms.RadioButton();
             this.rbGomez = new System.Windows.Forms.RadioButton();
             this.rbVovchuck = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbCavila = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgFal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,24 +140,24 @@
             this.rbVovchuck.Text = "Vovchuck";
             this.rbVovchuck.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbCavila
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(516, 69);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbCavila.AutoSize = true;
+            this.rbCavila.Location = new System.Drawing.Point(516, 69);
+            this.rbCavila.Name = "rbCavila";
+            this.rbCavila.Size = new System.Drawing.Size(54, 17);
+            this.rbCavila.TabIndex = 10;
+            this.rbCavila.TabStop = true;
+            this.rbCavila.Text = "Cavila";
+            this.rbCavila.UseVisualStyleBackColor = true;
+            this.rbCavila.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // ListasExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 500);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbCavila);
             this.Controls.Add(this.rbVovchuck);
             this.Controls.Add(this.rbGomez);
             this.Controls.Add(this.rbOtero);
@@ -188,6 +188,6 @@
         private System.Windows.Forms.RadioButton rbOtero;
         private System.Windows.Forms.RadioButton rbGomez;
         private System.Windows.Forms.RadioButton rbVovchuck;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbCavila;
     }
 }

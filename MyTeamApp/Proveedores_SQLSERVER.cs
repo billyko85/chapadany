@@ -12,12 +12,12 @@ namespace MyTeamApp
     {
 
         private string connectionString =
-            "Data Source = chapadany.database.windows.net; Initial Catalog = chapadany_prueba1;" +
+        /*    "Data Source = chapadany.database.windows.net; Initial Catalog = chapadany_prueba1;" +
             " Integrated Security = False; User ID = daniel; Password=andenopA*1;" +
             "Connect Timeout = 0; Encrypt=False;TrustServerCertificate=False;" +
             "ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-
+        */
+        "Data Source = USER2 - PC\\SQLEXPRESS;Initial Catalog = DUPLICADO14032024;Integrated Security = True";
 
         public void eliminarRepetidos()
         {

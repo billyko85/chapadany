@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MyTeamApp
 {
-    class MyExcel
+     class MyExcel
     {
         public static string DB_PATH = @"";
         public static BindingList<Lista> EmpList = new BindingList<Lista>();

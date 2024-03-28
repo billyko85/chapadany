@@ -20,6 +20,7 @@ namespace MyTeamApp
             dbConnect = new Proveedores_SQLSERVER();
         }
 
+        
         private void btnCargar_Click(object sender, EventArgs e)
         {
             DataTable datos;
@@ -98,19 +99,22 @@ namespace MyTeamApp
 
                 }
 
-                if (rbVovchuck.Checked == true)
+                if (rbCavila.Checked == true)
                 {
-                    //MyExcelGomezTanques.DB_PATH = ExcelDialog.FileName;
+                    MyExcelCavila.DB_PATH = ExcelDialog.FileName;
 
-                    //txtPathFile.Text = ExcelDialog.FileName;
-                    //txtPathFile.ReadOnly = true;
-                    //btnCargar.Enabled = false;
-                    //MyExcelGomezTanques.InitializeExcel();
-                    //datos = MyExcelGomezTanques.ReadMyExcel_DataTable();
-                    //dgFal.DataSource = datos;
-                    //dbConnect.InsertarPreciosBulk(datos, progressBar1, "TanquesGomezTorralba");
+                    txtPathFile.Text = ExcelDialog.FileName;
+                    txtPathFile.ReadOnly = true;
+                    btnCargar.Enabled = false;
+                    MyExcelCavila.InitializeExcel();
+                    datos = MyExcelCavila.ReadMyExcel_DataTable();
+                    dgFal.DataSource = datos;
+                    dbConnect.InsertarPreciosBulk(datos, progressBar1, "Cavila");
+
 
                 }
+
+
 
             }
          }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MyTeamApp</RootNamespace>
     <AssemblyName>MyTeamApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="MyExceFal.cs" />
     <Compile Include="MyExcelDelviso.cs" />
+    <Compile Include="MyExcelCavila.cs" />
     <Compile Include="MyExcelGomezTanques.cs" />
     <Compile Include="MyExcelOtero.cs" />
     <Compile Include="MyExcelSenesa.cs" />
